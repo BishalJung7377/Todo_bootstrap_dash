@@ -1,0 +1,73 @@
+@import "../custom";
+
+
+
+.display-3 {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  font-size: 1rem; 
+  &--title{
+    font-size: 1.7rem;
+    color: $primary;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+  }
+  &--subtitle{
+    font-size: 1.2rem;
+    color: $gray-800;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+  }
+}
+
+.display-2{
+  text-transform: capitalize;
+  margin-bottom: 1em;
+  font-family: "Poppins", sans-serif;
+  &--date{
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+  &--description{
+    font-size: 1.2rem;
+    display: block;
+    margin: 1em 0 0 0;
+    text-transform: none;
+    text-align: justify;
+    font-weight: 400;
+  }
+  &--tasknumber{
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: start;
+    margin-top: 0;
+  }
+  &--overviewtext{
+    display: inline-block;
+    font-size: 2.3em;
+    font-weight: 400;
+    margin:0 0 1.5em 0;
+    padding:0;
+  }
+  &--tasktext{
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding:0;
+    margin:0 0 0 0.7em;
+  }
+  &--tasksubtitletext{
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    padding:0;
+    margin:0 0 0 2.7em;
+    
+  }
+}

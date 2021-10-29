@@ -1,0 +1,18 @@
+@import "./custom";
+
+
+//importing component sections
+@import "./components/buttons";
+@import "./components/mixins";
+@import "./components/typography";
+@import "./components/animations";
+
+
+//importing sections 
+
+@import "./sections/intro-section";
+@import "./sections/navbar";
+@import "./sections/sectiondate";
+@import "./sections/overview";
+@import "./sections/tasktables";
+

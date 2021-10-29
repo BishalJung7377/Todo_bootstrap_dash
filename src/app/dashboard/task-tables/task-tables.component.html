@@ -1,0 +1,155 @@
+<section class="tasktable" id="tasktable">
+  <div class="container">
+    <div class="row">
+      <div
+        class="
+          col-lg-4 col-md-4 col-sm-12 col-xs-12
+          task-tables
+          rounded
+          p-2
+          mb-2
+          text-start
+        "
+      >
+        <!-- todays task  -->
+        <span class="display-2--overviewtext"
+          >Today's Task
+          <button class="rounded-pill btn-round tasknumbers" type="button">
+            5
+          </button>
+        </span>
+        <div class="table__data p-4 mb-2 border border-2 rounded text-start">
+          <section class="task-section">
+            <mat-checkbox class="example-margin">
+              <span class="display-2--tasktext">Walking With Dogs</span>
+              <button type="button" class="priority ml-5">
+                <span> High</span>
+              </button>
+            </mat-checkbox>
+            <br />
+            <span class="display-2--tasksubtitletext fw-light text-center"
+              >Personal</span
+            >
+            <mat-divider class="mt-4"></mat-divider>
+          </section>
+        </div>
+      </div>
+      <!-- todays task  -->
+      <!-- listname  -->
+
+      <div
+        class="
+          col-lg-6 col-md-6 col-sm-12 col-xs-12
+          list-tables
+          rounded
+          p-2
+          m-auto
+        "
+      >
+        <div class="row">
+          <div class="col-md-6">
+            <span class="display--2">
+              <span class="display-2--overviewtext">List Name </span>
+            </span>
+          </div>
+          <div class="col-md-6 text-end">
+            <div class="newlistbtn">
+              <button type="button" class="btn-newlist">
+                <span> Create new list </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="listhead d-flex">
+          <div class="col-md-6">
+            <p class="display--2">
+              <span class="display-2--overviewtext">List Name </span>
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <button type="button" class="btn-newtask">
+              <span> Create new task </span>
+            </button>
+          </div>
+        </div> -->
+
+        <div
+          class="
+            table__data
+            p-4
+            mb-2
+            border border-2
+            rounded
+            p-2
+            mb-2
+            text-start
+          "
+        >
+          <section class="list-section">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item border border-2 rounded bg-none">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed border-bottom-0"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Personal &nbsp; &nbsp; &nbsp;
+                    <button
+                      class="rounded-pill btn-round tasknumbers"
+                      type="button"
+                    >
+                      5
+                    </button>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div
+                      class="
+                        table__data
+                        p-4
+                        mb-2
+                        border border-2
+                        rounded
+                        text-start
+                      "
+                    >
+                      <section class="task-section">
+                        <mat-checkbox class="example-margin">
+                          <span class="display-2--tasktext"
+                            >Walking With Dogs</span
+                          >
+                        </mat-checkbox>
+                        <span
+                          class="
+                            display-2--tasksubtitletext
+                            fw-light
+                            text-center
+                          "
+                          >Personal</span
+                        >
+                        <button type="button" class="priority ml-5">
+                          <span> High</span>
+                        </button>
+                        <mat-divider class="mt-4"></mat-divider>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
