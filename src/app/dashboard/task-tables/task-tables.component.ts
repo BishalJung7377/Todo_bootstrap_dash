@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-task-tables',
   templateUrl: './task-tables.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskTablesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+  ) {  }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -10,6 +10,7 @@ import { OverviewSectionComponent } from './dashboard/overview-section/overview-
 import { TaskTablesComponent } from './dashboard/task-tables/task-tables.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
