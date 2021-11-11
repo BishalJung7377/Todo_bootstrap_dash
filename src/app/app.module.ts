@@ -34,6 +34,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
+import { AddTaskComponent } from './Modal/add-task/add-task.component';
 
 import { SignupPasswordComponent } from './signup-password/signup-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -49,6 +50,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LoginComponent,
     DashboardContentsComponent,
     SignupComponent,
+
+    AddNewTaskComponent,
+    AddTaskComponent
 
     AddNewTaskComponent
 
