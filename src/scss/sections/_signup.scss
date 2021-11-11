@@ -1,0 +1,301 @@
+$colour:#fff;
+$table-cell: table-cell;
+$rem:1.8rem;
+$flex:flex;
+$fiftenpx:15px;
+$eightpx:8px;
+$WdtH:395px;
+$marign28:28px;
+$seventyneg:-75px;
+$fiftyneg:-50px;
+$three50px:350px;
+$transi:0.3s;
+$lefT:0;
+$signupmargintop:10em;
+$signupbackgroundcolor:#ffffff;
+$signupFont-family:sans-serif;
+$signuptext-align:left;
+$signupcolor:#800000;
+$signupautofield:auto;
+$signupAbspositon:absolute;
+$signupRelposition: relative;
+$signupwidth:400px;
+$signuppadding:40px;
+$signuperrorcolor:red;
+$signupnoerrorcolor:green;
+$hundredwidth:100%;
+$backimg: url("../../assets/login.jpg");
+$twentypix:20px;
+$texpix:10px;
+$margin120:120px;
+
+
+
+
+
+
+
+
+
+
+.signup-section {
+    margin: 10em auto;
+  }
+
+
+
+.login-container {
+    margin-top: $signupmargintop;
+    font-family:$signupFont-family;
+    padding:$rem;
+  }
+  .login-container .image-holder {
+    display: $table-cell;
+    width: $signupautofield;
+    background: $backimg;
+    position:$signupRelposition;
+    background-repeat: repeat-x;
+  }
+  .title {
+    text-align: $signuptext-align;
+    font-weight: bold;
+    margin: $signupautofield;
+    color: $signupcolor;
+    font-weight: bolder;
+  }
+  .subtitle {
+    text-align: $signuptext-align;
+    font: weight $texpix;
+  }
+  
+  .login-container .form-container {
+    display: table;
+    max-width: 900px;
+    width: $hundredwidth;
+    margin: 0 auto;
+    border-radius: $twentypix;
+    padding: $rem;
+    box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
+    background: $colour;
+  }
+  .next-btn {
+    background-color: $signupcolor;
+    color: $colour;
+    padding: 18px $twentypix;
+    margin-top: $texpix;
+    margin-bottom: $twentypix;
+    width: $hundredwidth;
+    border-radius: $texpix;
+    border: none;
+  }
+  
+  .icon {
+    margin-top: $texpix;
+  }
+  .login-container form {
+    display:$table-cell;
+    width: $signupwidth;
+    background-color: $signupbackgroundcolor;
+    padding: $signuppadding 60px;
+  }
+  
+
+  @media screen and (max-width:700px) {
+    .login-container {
+        margin-top: 10px;
+        padding:10px;
+      }
+      .login-container form {
+        display:$table-cell;
+        width:100px;
+        background-color: $signupbackgroundcolor;
+        padding: $signuppadding 60px;
+      }
+      .login-container .form-container {
+        display: table;
+        max-width: 100px;
+        width: 100px;
+        margin: 0 auto;
+        border-radius: $twentypix;
+        padding: $rem;
+        box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
+        background:$colour;
+      }
+
+      .next-btn {
+        background-color: $signupcolor;
+        color: $colour;
+        padding: 18px $twentypix;
+        margin-top: $texpix;
+        margin-bottom: $twentypix;
+        width: 50%;
+        border-radius: $texpix;
+        border: none;
+      }
+      .title {
+        text-align: $signuptext-align;
+        font-weight: small;
+        margin: $signupautofield;
+        color: $signupcolor;
+      }
+      .subtitle {
+        text-align: $signuptext-align;
+        font: weight 5px;
+      }
+  }
+@media screen and (max-width: 991px) {
+    .login-container form {
+      padding: $signuppadding;
+    }
+  }
+  .email-login {
+    display: $flex;
+    flex-direction: column;
+    width: $signupwidth;
+  }
+  .email-login label {
+    color: rgb(170 166 166);
+  }
+
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="alphanumeric"] {
+  padding: $fiftenpx $twentypix;
+  margin-top: $eightpx;
+  margin-bottom: $fiftenpx;
+  border: 1px solid #ccc;
+  border-radius: $eightpx;
+  box-sizing: border-box;
+  width: 100% !important;
+
+}
+
+.iconsinput input[type="text"],
+input[type="password"],
+input[type="date"] {
+  padding-left: $signuppadding;
+  border-radius: 6px;
+}
+.iconsinput input[type="alphanumeric"] {
+  padding-left: $texpix;
+}
+.iconsinput {
+  position: $signupRelposition;
+}
+.iconsinput i {
+  position: $signupAbspositon;
+  left: $lefT;
+  top: 9px $eightpx;
+  transition: $transi;
+  margin-top: $marign28;
+  margin-left: $twentypix;
+  
+}
+.iconsinput input[type="text"]:focus + i {
+  color: $signupcolor;
+}
+.iconsinput input[type="password"]:focus + i {
+  color: $signupcolor;
+}
+.phNumber {
+  margin-left: $margin120;
+  margin-top: $seventyneg;
+}
+.phoneIcon {
+    margin-left: 15px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+  }
+ .flag {
+    margin-left: 15px;
+  margin-top: -50px;
+  margin-bottom: 20px;
+  
+}
+.fa-phone-alt{
+  color: black;
+}
+.mateye {
+  position: $signupAbspositon;
+  left: $lefT;
+  color: #aaa;
+  transition:$transi;
+  margin-top: -53px;
+  margin-left: 360px;
+}
+.tick {
+  position: $signupAbspositon;
+  left: $lefT;
+  color: $signupnoerrorcolor;
+  transition: $transi;
+  margin-top: $seventyneg;
+  margin-left: 320px;
+}
+.tickclose {
+  position: $signupAbspositon;
+  left: $lefT;
+  color: $signuperrorcolor;
+  transition: $transi;
+  margin-top: $seventyneg;
+  margin-left: 320px;
+}
+
+.emailerror {
+  color: $signuperrorcolor;
+}
+.passworderror {
+  color: $signuperrorcolor;
+}
+.mat-radio-button {
+  margin-left: $twentypix;
+}
+.invalid-feedback {
+  display: block;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: $signupcolor !important; /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: $signupcolor !important; /*outer ring color change*/
+}
+.btn-outline-secondary .calendar {
+  margin-top: $texpix;
+}
+@media screen and (max-width:700px) {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="alphanumeric"] {
+      padding: $fiftenpx $twentypix;
+      margin-top: $eightpx;
+      margin-bottom: $fiftenpx;
+      border: 1px solid #ccc;
+      border-radius: $eightpx;
+      box-sizing: border-box;
+      width: 50%;
+    }
+    .tick {
+        position: $signupAbspositon;
+        left: $lefT;
+        color: $signupnoerrorcolor;
+        transition: $transi;
+        margin-top: $seventyneg;
+        margin-left: 150px;
+
+      }
+      .tickclose {
+        position: $signupAbspositon;
+        left: $lefT;
+        color: $signuperrorcolor;
+        transition: $transi;
+        margin-top: $seventyneg;
+        margin-left: 150px;
+      }
+  
+  }

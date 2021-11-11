@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
   submitted = false;
   constructor(
     private formBuilder: FormBuilder,
-    public signupAuth: SignupserviceService,
+    // public signupAuth: SignupserviceService,
     public router: Router
   ) {}
 
@@ -43,13 +43,13 @@ export class SignupComponent implements OnInit {
     });
   }
   onSubmit() {
-    if (this.signupForm.valid) {
-      this.signupAuth.userData = this.signupForm.value;
-      localStorage.setItem(
-        'usersignupdata',
-        JSON.stringify(this.signupForm.value)
-      );
-    }
+    // if (this.signupForm.valid) {
+    //   this.signupAuth.userData = this.signupForm.value;
+    //   localStorage.setItem(
+    //     'usersignupdata',
+    //     JSON.stringify(this.signupForm.value)
+    //   );
+    // }
     this.router.navigate(['/setpassword']);
   }
   get signupValidData() {
