@@ -35,6 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignupPasswordComponent } from './signup-password/signup-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     MatCheckboxModule,
     MatDividerModule,
     RouterModule,
-
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
