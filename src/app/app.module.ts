@@ -32,6 +32,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
+
 import { SignupPasswordComponent } from './signup-password/signup-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -46,8 +49,12 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LoginComponent,
     DashboardContentsComponent,
     SignupComponent,
+
+    AddNewTaskComponent
+
     SignupPasswordComponent,
     ForgotPasswordComponent
+
   ],
   imports: [
     BrowserModule,
