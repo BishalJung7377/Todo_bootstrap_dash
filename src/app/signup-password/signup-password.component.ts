@@ -39,7 +39,7 @@ export class SignupPasswordComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    public signupAuth: SignupserviceService,
+    // public signupAuth: SignupserviceService,
     public router: Router
   ) {}
 
@@ -74,20 +74,20 @@ export class SignupPasswordComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.PasswordForm.valid) {
-      this.signupdata = this.signupAuth.userData;
-      this.signupdata.name = this.signupdata.name;
-      this.signupdata.email = this.signupdata.email;
-      this.signupdata.date = this.signupdata.date;
-      this.signupdata.phone = this.signupdata.phone;
-      this.signupdata.password = this.PasswordForm.value.cpassword;
-      this.signupdata.gender = this.signupdata.gender;
-      this.signupAuth.userSignUp(this.signupdata).subscribe((response) => {
-        console.log(response);
-      });
-    } else {
-      console.warn('Error User');
-    }
+    // if (this.PasswordForm.valid) {
+    //   this.signupdata = this.signupAuth.userData;
+    //   this.signupdata.name = this.signupdata.name;
+    //   this.signupdata.email = this.signupdata.email;
+    //   this.signupdata.date = this.signupdata.date;
+    //   this.signupdata.phone = this.signupdata.phone;
+    //   this.signupdata.password = this.PasswordForm.value.cpassword;
+    //   this.signupdata.gender = this.signupdata.gender;
+    //   this.signupAuth.userSignUp(this.signupdata).subscribe((response) => {
+    //     console.log(response);
+    //   });
+    // } else {
+    //   console.warn('Error User');
+    // }
   }
 
 }

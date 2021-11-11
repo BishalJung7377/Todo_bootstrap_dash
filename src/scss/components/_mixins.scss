@@ -1,0 +1,180 @@
+
+$display-column:column;
+$fourHundPixel: 400px;
+$flexdispay: flex;
+$font-family : sans-serif;
+$background-color: #800000;
+$color:#fff;
+$errColor:red;
+$noerrColor:green;
+$onePx: 1px;
+$backgroundImg: url("../../assets/forgot.png");
+$signup-fontweight:bold;
+$signup-pos:relative;
+$signup-posAbs: absolute;
+$box-shadowss: 2px 5px 20px rgba(0, 0, 0, 0.1);
+$signup-width:100%;
+$twentyPx:20px;
+$emPadding:1.8em;
+$border-10rad:10px;
+$width400px:400px;
+$transition: 0.3s;
+$solidRed-border:1px solid red;
+$solidGreen-border:1px solid green;
+$texPixel-margin:10px;
+$bolder-fontweight: bolder;
+$login-contmargin:10em;
+$repeat-x:repeat-x;
+$EIGHTEN-px:18px;
+$Sixty-pixel:60px;
+$leftTextalign:left;
+$tabledisplay: table;
+$twentyPixx:20px;
+$tenPx: 10px;
+$display-cell:table-cell;
+$fortyPixx: 40px;
+$three95Width:395px;
+$fiftenPxx: 15px;
+$eightPixel:8px;
+$bordBox:border-box;
+
+
+
+.login-container {
+    margin-top: $login-contmargin;
+    font-family: $font-family;
+    padding: $emPadding;
+  }
+  .login-container .image-holder {
+    display: table-cell;
+    width: auto;
+    background: $backgroundImg;
+    position:$signup-pos;
+    background-repeat: $repeat-x;
+  }
+  .title {
+    text-align: $leftTextalign;
+    font-weight: $signup-fontweight;
+    margin: auto;
+    color: $background-color;
+    font-weight: $bolder-fontweight;
+  }
+  .subtitle {
+    text-align: $leftTextalign;
+    font-weight: $texPixel-margin;
+  }
+  
+  .login-container .form-container {
+    display: $tabledisplay;
+    max-width: 900px;
+    width: $signup-width;
+    margin: 0 auto;
+    border-radius: $twentyPixx;
+    padding: $emPadding;
+    box-shadow: $box-shadowss;
+    background-color: $color;
+  }
+  .cta-btn {
+    background-color:$background-color;
+    color:$color;
+    padding: $EIGHTEN-px $twentyPixx;
+    margin-top: $tenPx;
+    margin-bottom: $twentyPixx;
+    width: $signup-width;
+    border-radius: $tenPx;
+    border: none;
+  }
+  
+  .icon {
+    margin-top: $tenPx;
+  }
+  .login-container form {
+    display: $display-cell;
+    width: $width400px;
+    background-color: $color;
+    padding: $fortyPixx $Sixty-pixel;
+  }
+  
+
+  .email-login {
+    display: $flexdispay;
+    flex-direction: $display-column;
+    width: $fourHundPixel;
+  }
+  .email-login label {
+    color: rgb(170 166 166);
+  }
+  
+  .iconsinput input[type="text"],
+  input[type="password"] {
+    padding-left: $fortyPixx;
+  }
+  .iconsinput {
+    position: $signup-pos;
+  }
+  .iconsinput i {
+    position: $signup-posAbs;
+    left: 0;
+    top: 9px $eightPixel;
+    transition: $transition;
+    margin-top: 28px;
+    margin-left: $twentyPx;
+  }
+  
+  .iconsinput input[type="password"]:focus + i {
+    color: $background-color
+  }
+  
+  .mateye {
+    position: $signup-posAbs;
+    left: 0;
+    color: #aaa;
+    transition: $transition;
+    margin-top: -53px;
+    margin-left: 360px;
+  }
+  
+  input:valid {
+    background-color: white;
+  }
+  
+  form:valid {
+    border: 1px solid white;
+  }
+  
+  input:required {
+    border-color: $background-color;
+    border-width: $onePx;
+  }
+  
+  input:required:invalid {
+    border-color: #c00000;
+  }
+  ng-invalid:not(input) {
+    border: $solidRed-border
+  }
+  ng-valid:not(form) {
+    border: $solidGreen-border;
+  }
+  
+  .emailerror {
+    color: $errColor;
+  }
+  .passworderror {
+    color: $errColor;
+  }
+  
+  @media screen and (max-width: 700px) {
+      .login-container {
+          width: 80%;
+      
+        }
+        .form-container {
+            width: 80%;
+          }
+          .form{
+            width: 80%;
+      
+          }
+  }
+  
