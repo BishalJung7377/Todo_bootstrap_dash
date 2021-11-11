@@ -33,6 +33,7 @@ import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashb
 import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
+import { AddTaskComponent } from './Modal/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component
     LoginComponent,
     DashboardContentsComponent,
     SignupComponent,
-    AddNewTaskComponent
+    AddNewTaskComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
