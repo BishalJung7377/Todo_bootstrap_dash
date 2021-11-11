@@ -1,1 +1,70 @@
-<p>add-new-task works!</p>
+
+<div class="modal-header"  >
+    <h2 class="modal-title" id="modal-title">Create New Task</h2>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modalRef.close('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+   <form [formGroup]="TaskForm" #taskform="ngForm" (onSubmit)="onSubmit()">
+   <div class="form-group">
+    <label for="createlIst">Create New Task</label>
+    <input
+      type="text"
+      class="form-control form-control-lg"
+      formControlName="taskName"
+      name="taskName"
+      size="40"
+      placeholder="Task Name Here"
+    />
+    <div class="tick" *ngIf="formValidation.taskName.invalid && formValidation.taskName.touched">
+      <a style="color: red"> TaskName is required </a>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col">
+      <label for="formGroupExampleInput">Choose List Name</label>
+      <select class="custom-select" formControlName="listName">
+        <option value="" disabled selected>Choose List Name</option>
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="College Work">College Work</option>
+      </select>
+      
+    </div>
+    <div class="col">
+      <label for="formGroupExampleInput">Choose Priority</label>
+      <select class="custom-select" formControlName="priority">
+        <option value="" disabled selected>Choose Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="formGroupExampleInput">Choose Date and Time</label>
+
+      <input
+      type="date"
+      class="form-control" 
+      ngModel
+      formControlName="date"
+      placeholder="Select your date of birth"
+      ngbDatepicker
+      #d="ngbDatepicker"
+    />
+    <i
+      class="fas fa-calendar-alt"
+      aria-hidden="true"
+      (click)="d.toggle()"
+    ></i>
+    </div>
+  </div>
+   </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modalRef.close('cancel click')">Cancel</button>
+    <button type="button"  (click)="onSubmit()"class="btn btn-danger" (click)="modalRef.close('Ok click')" [disabled]="!TaskForm.valid">Save</button>
+  </div>
+
+  
