@@ -11,13 +11,33 @@ import { TaskTablesComponent } from './dashboard/task-tables/task-tables.compone
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth_gaurd/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorServiceService } from './services/interceptor-service.service';
+import { MatNativeDateModule } from '@angular/material/core';
+import { LoginComponent } from './login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from "@angular/material/button"
+import {MatSliderModule} from "@angular/material/slider";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DashDateSectionComponent,
     OverviewSectionComponent,
-    TaskTablesComponent
+    TaskTablesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +46,34 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatBadgeModule,
+    MatDividerModule,
+    MatListModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+ 
   ],
-  providers: [],
+  providers: [AuthGuard, {
+    provide:HTTP_INTERCEPTORS, useClass: InterceptorServiceService, multi: true
+  },
+  MatDatepickerModule,
+    MatNativeDateModule 
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

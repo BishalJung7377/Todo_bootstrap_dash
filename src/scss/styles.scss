@@ -10,9 +10,12 @@
 
 //importing sections 
 
-@import "./sections/intro-section";
+@import "./sections/login-section";
 @import "./sections/navbar";
 @import "./sections/sectiondate";
 @import "./sections/overview";
 @import "./sections/tasktables";
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
