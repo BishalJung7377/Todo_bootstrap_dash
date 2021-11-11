@@ -32,6 +32,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TaskTablesComponent,
     LoginComponent,
     DashboardContentsComponent,
-    SignupComponent
+    SignupComponent,
+    AddNewTaskComponent
   ],
   imports: [
     BrowserModule,
