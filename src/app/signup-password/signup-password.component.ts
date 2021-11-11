@@ -14,7 +14,7 @@ import {
   specialeChars,
   numericPass,
   Validateconfirmpassword,
-} from '../../Validator/validate';
+} from '../Validator/validate';
 import { SignupUserData } from 'src/app/signup/SignUpUserData';
 
 @Component({
