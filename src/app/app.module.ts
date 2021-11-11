@@ -30,6 +30,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
+import { SignupComponent } from './signup/signup.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -39,12 +41,14 @@ import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashb
     OverviewSectionComponent,
     TaskTablesComponent,
     LoginComponent,
-    DashboardContentsComponent
+    DashboardContentsComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    NgbModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatDividerModule,
