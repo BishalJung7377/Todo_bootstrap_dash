@@ -1,4 +1,10 @@
 @import "../components/variables";
 
-
-
+@mixin inputfieldEmelemts {
+  padding: $fiftenPxx $twentyPx;
+  margin-top: $eightPixel;
+  margin-bottom: $fiftenPxx;
+  border-radius: $eightPixel;
+  box-sizing: $bordBox;
+  width: 80% !important;
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
 import { APIServiceService } from '../services/apiservice.service';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   valid = false;
   constructor(
-    // private loginAuth: APIServiceService,
+    private loginAuth: APIServiceService,
     private formBuilder: FormBuilder,
     private router: Router
     ) { 
