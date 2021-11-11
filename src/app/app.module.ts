@@ -29,6 +29,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     DashDateSectionComponent,
     OverviewSectionComponent,
     TaskTablesComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardContentsComponent
   ],
   imports: [
     BrowserModule,
