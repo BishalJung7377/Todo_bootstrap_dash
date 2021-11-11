@@ -1,12 +1,25 @@
 @import "../custom";
 @import "../components/mixins";
+@import "../components/variables";
 
 .btn-round {
-  padding: 0.5375rem 1rem 0.5375rem 1rem;
+  padding: 0.2375rem 0.2375rem 0.2375rem 0.2375rem;
   position: relative;
-  font-weight: 400;
+  font-weight: 100;
   border: 1px solid white;
   color: $black;
+  font-size: 1.1rem;
+  color: $primary;
+  background-color: #ff726f;
+}
+.nav-button{
+  padding: 0.2375rem 0.4375rem 0.2375rem 0.4375rem;
+  position: relative;
+  font-weight: 100;
+  border: 1px solid white;
+  margin-top: 0.01em;
+  border-radius: 100%;
+  color: black;
   font-size: 1.1rem;
   color: $primary;
   background-color: #ff726f;

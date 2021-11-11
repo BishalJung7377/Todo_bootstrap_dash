@@ -1,41 +1,5 @@
-$colour:#fff;
-$table-cell: table-cell;
-$rem:1.8rem;
-$flex:flex;
-$fiftenpx:15px;
-$eightpx:8px;
-$WdtH:395px;
-$marign28:28px;
-$seventyneg:-75px;
-$fiftyneg:-50px;
-$three50px:350px;
-$transi:0.3s;
-$lefT:0;
-$signupmargintop:10em;
-$signupbackgroundcolor:#ffffff;
-$signupFont-family:sans-serif;
-$signuptext-align:left;
-$signupcolor:#800000;
-$signupautofield:auto;
-$signupAbspositon:absolute;
-$signupRelposition: relative;
-$signupwidth:400px;
-$signuppadding:40px;
-$signuperrorcolor:red;
-$signupnoerrorcolor:green;
-$hundredwidth:100%;
-$backimg: url("../../assets/login.jpg");
-$twentypix:20px;
-$texpix:10px;
-$margin120:120px;
 
-
-
-
-
-
-
-
+@import "../components/variables";
 
 
 .signup-section {
@@ -100,54 +64,8 @@ $margin120:120px;
   }
   
 
-  @media screen and (max-width:700px) {
-    .login-container {
-        margin-top: 10px;
-        padding:10px;
-      }
-      .login-container form {
-        display:$table-cell;
-        width:100px;
-        background-color: $signupbackgroundcolor;
-        padding: $signuppadding 60px;
-      }
-      .login-container .form-container {
-        display: table;
-        max-width: 100px;
-        width: 100px;
-        margin: 0 auto;
-        border-radius: $twentypix;
-        padding: $rem;
-        box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
-        background:$colour;
-      }
 
-      .next-btn {
-        background-color: $signupcolor;
-        color: $colour;
-        padding: 18px $twentypix;
-        margin-top: $texpix;
-        margin-bottom: $twentypix;
-        width: 50%;
-        border-radius: $texpix;
-        border: none;
-      }
-      .title {
-        text-align: $signuptext-align;
-        font-weight: small;
-        margin: $signupautofield;
-        color: $signupcolor;
-      }
-      .subtitle {
-        text-align: $signuptext-align;
-        font: weight 5px;
-      }
-  }
-@media screen and (max-width: 991px) {
-    .login-container form {
-      padding: $signuppadding;
-    }
-  }
+
   .email-login {
     display: $flex;
     flex-direction: column;
@@ -223,7 +141,7 @@ input[type="date"] {
   color: #aaa;
   transition:$transi;
   margin-top: -53px;
-  margin-left: 360px;
+  margin-left: 330px;
 }
 .tick {
   position: $signupAbspositon;
@@ -278,7 +196,7 @@ input[type="date"] {
       border: 1px solid #ccc;
       border-radius: $eightpx;
       box-sizing: border-box;
-      width: 50%;
+      width: 100% !important;
     }
     .tick {
         position: $signupAbspositon;
@@ -298,4 +216,47 @@ input[type="date"] {
         margin-left: 150px;
       }
   
+  }
+  @media screen and (max-width:700px) {
+    .login-container {
+        margin-top: 10px;
+        padding:10px;
+      }
+      .login-container form {
+        display:$table-cell;
+        width:100px;
+        background-color: $signupbackgroundcolor;
+        padding: $signuppadding 60px;
+      }
+      .login-container .form-container {
+        display: table;
+        max-width: 100px;
+        width: 100px;
+        margin: 0 auto;
+        border-radius: $twentypix;
+        padding: $rem;
+        box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
+        background:$colour;
+      }
+
+      .next-btn {
+        background-color: $signupcolor;
+        color: $colour;
+        padding: 18px $twentypix;
+        margin-top: $texpix;
+        margin-bottom: $twentypix;
+        width: 50%;
+        border-radius: $texpix;
+        border: none;
+      }
+      .title {
+        text-align: $signuptext-align;
+        font-weight: small;
+        margin: $signupautofield;
+        color: $signupcolor;
+      }
+      .subtitle {
+        text-align: $signuptext-align;
+        font: weight 5px;
+      }
   }

@@ -14,7 +14,7 @@
         <!-- todays task  -->
         <span class="display-2--overviewtext"
           >Today's Task
-          <button class="rounded-pill btn-round tasknumbers" type="button">
+          <button class="nav-button" type="button">
             5
           </button>
         </span>
@@ -54,7 +54,7 @@
           </div>
           <div class="col-md-6 text-end">
             <div class="newlistbtn">
-              <button type="button" class="btn-newlist">
+              <button type="button" class="btn-newlist" (click)="openModal()" >
                 <span> Create new list </span>
               </button>
             </div>
@@ -88,7 +88,7 @@
                   >
                     Personal &nbsp; &nbsp; &nbsp;
                     <button
-                      class="rounded-pill btn-round tasknumbers"
+                      class="nav-button"
                       type="button"
                     >
                       5
