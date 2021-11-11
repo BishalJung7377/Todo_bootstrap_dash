@@ -50,12 +50,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LoginComponent,
     DashboardContentsComponent,
     SignupComponent,
-
     AddNewTaskComponent,
-    AddTaskComponent
-
-    AddNewTaskComponent
-
+    AddTaskComponent,
+    AddNewTaskComponent,
     SignupPasswordComponent,
     ForgotPasswordComponent
 
