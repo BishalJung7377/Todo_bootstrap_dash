@@ -30,6 +30,11 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
+import { SignupComponent } from './signup/signup.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignupPasswordComponent } from './signup-password/signup-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 
 @NgModule({
   declarations: [
@@ -39,17 +44,20 @@ import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashb
     OverviewSectionComponent,
     TaskTablesComponent,
     LoginComponent,
-    DashboardContentsComponent
+    DashboardContentsComponent,
+    SignupComponent,
+    SignupPasswordComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
+    NgbModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatDividerModule,
     RouterModule,
-
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
