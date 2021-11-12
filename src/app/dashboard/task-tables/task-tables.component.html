@@ -74,7 +74,7 @@
         >
           <section class="list-section">
             <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item border border-0 rounded bg-none">
+              <div class="accordion-item ">
                 <h2 class="accordion-header" id="flush-headingOne">
                   <button
                     class="accordion-button collapsed border-bottom-0"
@@ -87,11 +87,11 @@
                     Personal &nbsp; &nbsp; &nbsp;
                     <button class="nav-button" type="button">5</button>
                   </button>
-                  <mat-divider></mat-divider>
                 </h2>
                 <div
                   id="flush-collapseOne"
-                  class="accordion-collapse collapse"
+                  class="accordion-collapse collapse border border-2
+                  rounded"
                   aria-labelledby="flush-headingOne"
                   data-bs-parent="#accordionFlushExample"
                 >
@@ -101,7 +101,6 @@
                         table__data
                         p-4
                         mb-2
-                        border border-2
                         rounded
                         text-start
                       "
@@ -123,11 +122,12 @@
                         <button type="button" class="priority ml-5">
                           <span> High</span>
                         </button>
-                        <mat-divider class="mt-4"></mat-divider>
                       </section>
                     </div>
                   </div>
                 </div>
+                <mat-divider class="mt-2"></mat-divider>
+
               </div>
             </div>
           </section>
