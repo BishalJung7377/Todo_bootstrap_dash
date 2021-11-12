@@ -27,6 +27,7 @@ const routes: Routes =[
   {
     path: "dashboard",
     component: DashboardContentsComponent,
+    canActivate:[AuthGuard]
   }
 ];
 

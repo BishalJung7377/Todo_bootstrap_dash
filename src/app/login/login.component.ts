@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   loginformvalidation!: FormGroup
   loginAuthResp: any;
   hide = true;
@@ -28,10 +27,11 @@ export class LoginComponent implements OnInit {
   submitted = false;
   valid = false;
   constructor(
-    private loginAuth: APIServiceService,
+    public loginAuth: APIServiceService,
     private formBuilder: FormBuilder,
     private router: Router
     ) { 
+      
     }
   ngOnInit(): void {
    this.initialize()
@@ -44,17 +44,17 @@ export class LoginComponent implements OnInit {
   }
 
 onSubmit() {
-    // this.loginAuth.userLogin(this.loginformvalidation.get('email')?.value,
-    //   this.loginformvalidation.get('password')?.value)
-    //   .subscribe(
-    //     (response) => {
-    //       this.loginAuthResp = response;
-    //       if (response.token) {
-    //         localStorage.setItem('token', response.token)
-    //         this.router.navigate(['/dashboard'])
-    //       }
-    //     }
-    //   )
+    this.loginAuth.userLogin(this.loginformvalidation.get('email')?.value,
+      this.loginformvalidation.get('password')?.value)
+      .subscribe(
+        (response) => {
+          this.loginAuthResp = response;
+          if (response.token) {
+            localStorage.setItem('token', response.token)
+            this.router.navigate(['/dashboard'])
+          }
+        }
+      )
   }
   get loginValidation() {
     return this.loginformvalidation.controls

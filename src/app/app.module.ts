@@ -12,7 +12,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth_gaurd/auth.guard';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorServiceService } from './services/interceptor-service.service';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
@@ -32,10 +31,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { DashboardContentsComponent } from './dashboard/dashboard-contents/dashboard-contents.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
 import { AddTaskComponent } from './Modal/add-task/add-task.component';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupPasswordComponent } from './signup-password/signup-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
@@ -54,8 +52,11 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AddTaskComponent,
     AddNewTaskComponent,
     SignupPasswordComponent,
-    ForgotPasswordComponent
-
+    ForgotPasswordComponent,
+    NavbarComponent,
+    DashDateSectionComponent,
+    OverviewSectionComponent,
+    TaskTablesComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +85,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     MatListModule,
     MatCheckboxModule,
     MatExpansionModule,
+    HttpClientModule,
+
  
   ],
   providers: [AuthGuard, {
