@@ -33,6 +33,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddNewTaskComponent } from './Modal/add-new-task/add-new-task.component';
 import { AddTaskComponent } from './Modal/add-task/add-task.component';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupPasswordComponent } from './signup-password/signup-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -53,7 +54,6 @@ import {
     SignupComponent,
     AddNewTaskComponent,
     AddTaskComponent,
-    AddNewTaskComponent,
     SignupPasswordComponent,
     ForgotPasswordComponent,
     NavbarComponent,
@@ -92,6 +92,7 @@ import {
     NgxMatDatetimePickerModule,
     NgxMatNativeDateModule,
     NgxMatTimepickerModule,
+    MdbModalModule
   ],
   providers: [
     AuthGuard,

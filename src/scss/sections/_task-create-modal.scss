@@ -1,0 +1,26 @@
+.modal-header {
+    border-bottom: 0 none;
+}
+
+.modal-footer {
+    border-top: 0 none;
+}
+::ng-deep .modal-dialog-centered { 
+    max-width: 50%;
+    width: 50%;
+}
+
+.col i {
+    position: absolute;
+    left: 10px;
+    top: 9px 8px;
+    transition: 0.3s;
+    margin-top: -28px;
+    margin-left: 20px;
+    
+  }
+
+  input[type="date"] {
+    padding-left: 40px;
+    border-radius: 6px;
+  }

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddTaskComponent } from 'src/app/Modal/add-task/add-task.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-
+import { TaskService } from 'src/app/services/TaskServices/task.service';
 @Component({
   selector: 'app-dash-date-section',
   templateUrl: './dash-date-section.component.html',
@@ -17,20 +17,24 @@ export class DashDateSectionComponent implements OnInit {
     year: 'numeric',
     day: 'numeric',
   });
+  taskData:any=[]
   modalRef!: MdbModalRef<AddNewTaskComponent>;
   constructor(
-    private formBuilder: FormBuilder,
-    config: NgbModalConfig,
     private modal: NgbModal,
-    private _modalService: NgbModal,
-    // private modalService: MdbModalService
+    private modalService: MdbModalService,
+    private showTaskAUth: TaskService
   ) {}
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.showTaskAUth.showTask().subscribe((response:any)=>{
+      this.taskData = response
+      console.log(this.taskData);
+      
+    })
+  }
   // open modal function 
   openModal() {
-    // this.modalRef = this.modalService.open(AddNewTaskComponent, {
-    //   modalClass: 'modal-dialog-centered',
-    // });
+    this.modalRef = this.modalService.open(AddNewTaskComponent, {
+      modalClass: 'modal-dialog-centered',
+    });
   }
 }
