@@ -16,10 +16,17 @@
       name="taskName"
       size="40"
       placeholder="Task Name Here"
-    />
-    <div class="tick" *ngIf="formValidation.taskName.invalid && formValidation.taskName.touched">
-      <a style="color: red"> TaskName is required </a>
-    </div>
+   
+      />
+      <span
+      class="tasknameerror mr-2"
+      *ngIf="
+      formValidation.taskName.invalid && formValidation.taskName.touched
+      "
+    >
+      task name required</span
+    >
+   
    </div>
    <div class="row">
     <div class="col">
@@ -53,11 +60,14 @@
       ngbDatepicker
       #d="ngbDatepicker"
     />
-    <i
+    <div class="modal-calandar">
+      <i
       class="fas fa-calendar-alt"
       aria-hidden="true"
       (click)="d.toggle()"
     ></i>
+    </div>
+  
     </div>
   </div>
    </form>

@@ -1,3 +1,4 @@
+@import "../components/variables";
 .modal-header {
     border-bottom: 0 none;
 }
@@ -23,4 +24,16 @@
   input[type="date"] {
     padding-left: 40px;
     border-radius: 6px;
+  }
+  .tasknameerror {
+    color: red;
+    margin-right: 2em;
+  }
+  .modal-calandar{
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color:black;
+    transition: $transition;
+    margin-top: -5px;
+
   }
