@@ -58,7 +58,7 @@
   }
   .login-container form {
     display:$table-cell;
-    width: $signupwidth;
+    width: $fourHundPixel;
     background-color: $signupbackgroundcolor;
     padding: $signuppadding 60px;
   }
@@ -69,7 +69,7 @@
   .email-login {
     display: $flex;
     flex-direction: column;
-    width: $signupwidth;
+    width: $fourHundPixel;
   }
   .email-login label {
     color: rgb(170 166 166);

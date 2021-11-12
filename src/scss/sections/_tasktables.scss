@@ -21,5 +21,7 @@
         padding: 0em 10em 0em 7em;
     }
 }
-
+.panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
+    border: none;
+}
 

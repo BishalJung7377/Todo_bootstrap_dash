@@ -27,25 +27,25 @@ export class TaskTablesComponent implements OnInit {
     config: NgbModalConfig,
     private modal: NgbModal,
     private _modalService: NgbModal,
-    private modalService: MdbModalService,
-    private listaDataname: ListService,
-    private showTaskauth: TaskService
+    // private modalService: MdbModalService,
+    // private listaDataname: ListService,
+    // private showTaskauth: TaskService
   ) {
-    this.listaDataname.displayList().subscribe((response: any) => {
-      this.listData = response;
-      (this.listCounter = this.listData.length)
-    });
-    this.showTaskauth.showTask().subscribe((response: any) => {
-      this.taskData = response;
-    });
+    // this.listaDataname.displayList().subscribe((response: any) => {
+    //   this.listData = response;
+    //   (this.listCounter = this.listData.length)
+    // });
+    // this.showTaskauth.showTask().subscribe((response: any) => {
+    //   this.taskData = response;
+    // });
   }
   ngOnInit(): void {}
   open(content:string):void {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }
   openModal() {
-    this.modalRef = this.modalService.open(AddTaskComponent, {
-      modalClass: 'modal-dialog-centered',
-    });
+    // this.modalRef = this.modalService.open(AddTaskComponent, {
+    //   modalClass: 'modal-dialog-centered',
+    // });
   }
 }
