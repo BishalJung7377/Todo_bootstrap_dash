@@ -26,6 +26,8 @@ export class DashDateSectionComponent implements OnInit {
     // private modalService: MdbModalService
   ) {}
   ngOnInit(): void {}
+
+  // open modal function 
   openModal() {
     // this.modalRef = this.modalService.open(AddNewTaskComponent, {
     //   modalClass: 'modal-dialog-centered',

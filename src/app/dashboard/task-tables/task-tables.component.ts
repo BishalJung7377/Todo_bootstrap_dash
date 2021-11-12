@@ -43,6 +43,8 @@ export class TaskTablesComponent implements OnInit {
   open(content:string):void {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }
+
+  // open modal for new list 
   openModal() {
     // this.modalRef = this.modalService.open(AddTaskComponent, {
     //   modalClass: 'modal-dialog-centered',

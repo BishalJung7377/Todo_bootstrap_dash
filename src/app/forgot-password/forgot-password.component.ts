@@ -35,6 +35,7 @@ export class ForgotPasswordComponent implements OnInit {
     this.passwordReset();
   }
 
+  // password reset function 
   passwordReset(): void {
     this.resetEmail = this.formBuilder.group({
       email: [
@@ -51,6 +52,7 @@ export class ForgotPasswordComponent implements OnInit {
   get resetEmailvalue() {
     return this.resetEmail.controls;
   }
+  // modal for sending email 
   open(content:any) {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }

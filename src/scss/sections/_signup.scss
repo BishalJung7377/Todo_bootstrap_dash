@@ -9,65 +9,65 @@
 
 
 .login-container {
-    margin-top: $signupmargintop;
-    font-family:$signupFont-family;
+    margin-top: $tenEm;
+    font-family:$font-family;
     padding:$rem;
   }
   .login-container .image-holder {
-    display: $table-cell;
-    width: $signupautofield;
+    display: $tableCell;
+    width: $Auto;
     background: $backimg;
-    position:$signupRelposition;
+    position:$positionRelative;
     background-repeat: repeat-x;
   }
   .title {
-    text-align: $signuptext-align;
+    text-align: $leftAlign;
     font-weight: bold;
-    margin: $signupautofield;
-    color: $signupcolor;
+    margin: $Auto;
+    color: $background-Color;
     font-weight: bolder;
   }
   .subtitle {
-    text-align: $signuptext-align;
-    font: weight $texpix;
+    text-align: $leftAlign;
+    font: weight $texPixel;
   }
   
   .login-container .form-container {
     display: table;
     max-width: 900px;
-    width: $hundredwidth;
+    width: $widthOnehundred;
     margin: 0 auto;
-    border-radius: $twentypix;
+    border-radius: $twentyPx;
     padding: $rem;
-    box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
-    background: $colour;
+    box-shadow: 2px 5px $twentyPx rgba(0, 0, 0, 0.1);
+    background: $primaryColor;
   }
   .next-btn {
-    background-color: $signupcolor;
-    color: $colour;
-    padding: 18px $twentypix;
-    margin-top: $texpix;
-    margin-bottom: $twentypix;
-    width: $hundredwidth;
-    border-radius: $texpix;
+    background-color: $background-Color;
+    color: $primaryColor;
+    padding: 18px $twentyPx;
+    margin-top: $texPixel;
+    margin-bottom: $twentyPx;
+    width: $widthOnehundred;
+    border-radius: $texPixel;
     border: none;
   }
   
   .icon {
-    margin-top: $texpix;
+    margin-top: $texPixel;
   }
   .login-container form {
-    display:$table-cell;
+    display:$tableCell;
     width: $fourHundPixel;
-    background-color: $signupbackgroundcolor;
-    padding: $signuppadding 60px;
+    background-color: $whiteBackgroundColor;
+    padding: $fortyPixel 60px;
   }
   
 
 
 
   .email-login {
-    display: $flex;
+    display: $flexDispay;
     flex-direction: column;
     width: $fourHundPixel;
   }
@@ -80,11 +80,11 @@ input[type="text"],
 input[type="password"],
 input[type="date"],
 input[type="alphanumeric"] {
-  padding: $fiftenpx $twentypix;
-  margin-top: $eightpx;
-  margin-bottom: $fiftenpx;
+  padding: $fiftenPxx $twentyPx;
+  margin-top: $eightPixel;
+  margin-bottom: $fiftenPxx;
   border: 1px solid #ccc;
-  border-radius: $eightpx;
+  border-radius: $eightPixel;
   box-sizing: border-box;
   width: 100% !important;
 
@@ -93,29 +93,29 @@ input[type="alphanumeric"] {
 .iconsinput input[type="text"],
 input[type="password"],
 input[type="date"] {
-  padding-left: $signuppadding;
+  padding-left: $fortyPixel;
   border-radius: 6px;
 }
 .iconsinput input[type="alphanumeric"] {
-  padding-left: $texpix;
+  padding-left: $texPixel;
 }
 .iconsinput {
-  position: $signupRelposition;
+  position: $positionRelative;
 }
 .iconsinput i {
-  position: $signupAbspositon;
-  left: $lefT;
-  top: 9px $eightpx;
-  transition: $transi;
+  position: $positionAbsolute;
+  left: $zeroValue;
+  top: 9px $eightPixel;
+  transition: $transition;
   margin-top: $marign28;
-  margin-left: $twentypix;
+  margin-left: $twentyPx;
   
 }
 .iconsinput input[type="text"]:focus + i {
-  color: $signupcolor;
+  color: $background-Color;
 }
 .iconsinput input[type="password"]:focus + i {
-  color: $signupcolor;
+  color: $background-Color;
 }
 .phNumber {
   margin-left: $margin120;
@@ -136,53 +136,53 @@ input[type="date"] {
   color: black;
 }
 .mateye {
-  position: $signupAbspositon;
-  left: $lefT;
+  position: $positionAbsolute;
+  left: $zeroValue;
   color: #aaa;
-  transition:$transi;
+  transition:$transition;
   margin-top: -53px;
   margin-left: 330px;
 }
 .tick {
-  position: $signupAbspositon;
-  left: $lefT;
-  color: $signupnoerrorcolor;
-  transition: $transi;
+  position: $positionAbsolute;
+  left: $zeroValue;
+  color: $noerrColor;
+  transition: $transition;
   margin-top: $seventyneg;
   margin-left: 320px;
 }
 .tickclose {
-  position: $signupAbspositon;
-  left: $lefT;
-  color: $signuperrorcolor;
-  transition: $transi;
+  position: $positionAbsolute;
+  left: $zeroValue;
+  color: $errorColor;
+  transition: $transition;
   margin-top: $seventyneg;
   margin-left: 320px;
 }
 
 .emailerror {
-  color: $signuperrorcolor;
+  color: $errorColor;
 }
 .passworderror {
-  color: $signuperrorcolor;
+  color: $errorColor;
 }
 .mat-radio-button {
-  margin-left: $twentypix;
+  margin-left: $twentyPx;
 }
 .invalid-feedback {
   display: block;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: $signupcolor !important; /*inner circle color change*/
+  background-color: $background-Color !important; /*inner circle color change*/
 }
 
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
   .mat-radio-outer-circle {
-  border-color: $signupcolor !important; /*outer ring color change*/
+  border-color: $background-Color !important; /*outer ring color change*/
 }
 .btn-outline-secondary .calendar {
-  margin-top: $texpix;
+  margin-top: $texPixel;
 }
 @media screen and (max-width:700px) {
 
@@ -190,28 +190,28 @@ input[type="date"] {
     input[type="password"],
     input[type="date"],
     input[type="alphanumeric"] {
-      padding: $fiftenpx $twentypix;
-      margin-top: $eightpx;
-      margin-bottom: $fiftenpx;
+      padding: $fiftenPxx $twentyPx;
+      margin-top: $eightPixel;
+      margin-bottom: $fiftenPxx;
       border: 1px solid #ccc;
-      border-radius: $eightpx;
+      border-radius: $eightPixel;
       box-sizing: border-box;
       width: 100% !important;
     }
     .tick {
-        position: $signupAbspositon;
-        left: $lefT;
-        color: $signupnoerrorcolor;
-        transition: $transi;
+        position: $positionAbsolute;
+        left: $zeroValue;
+        color: $noerrColor;
+        transition: $transition;
         margin-top: $seventyneg;
         margin-left: 150px;
 
       }
       .tickclose {
-        position: $signupAbspositon;
-        left: $lefT;
-        color: $signuperrorcolor;
-        transition: $transi;
+        position: $positionAbsolute;
+        left: $zeroValue;
+        color: $errorColor;
+        transition: $transition;
         margin-top: $seventyneg;
         margin-left: 150px;
       }
@@ -223,40 +223,40 @@ input[type="date"] {
         padding:10px;
       }
       .login-container form {
-        display:$table-cell;
+        display:$tableCell;
         width:100px;
-        background-color: $signupbackgroundcolor;
-        padding: $signuppadding 60px;
+        background-color: $whiteBackgroundColor;
+        padding: $fortyPixel 60px;
       }
       .login-container .form-container {
         display: table;
         max-width: 100px;
         width: 100px;
         margin: 0 auto;
-        border-radius: $twentypix;
+        border-radius: $twentyPx;
         padding: $rem;
-        box-shadow: 2px 5px $twentypix rgba(0, 0, 0, 0.1);
-        background:$colour;
+        box-shadow: 2px 5px $twentyPx rgba(0, 0, 0, 0.1);
+        background:$primaryColor;
       }
 
       .next-btn {
-        background-color: $signupcolor;
-        color: $colour;
-        padding: 18px $twentypix;
-        margin-top: $texpix;
-        margin-bottom: $twentypix;
+        background-color: $background-Color;
+        color: $primaryColor;
+        padding: 18px $twentyPx;
+        margin-top: $texPixel;
+        margin-bottom: $twentyPx;
         width: 50%;
-        border-radius: $texpix;
+        border-radius: $texPixel;
         border: none;
       }
       .title {
-        text-align: $signuptext-align;
+        text-align: $leftAlign;
         font-weight: small;
-        margin: $signupautofield;
-        color: $signupcolor;
+        margin: $Auto;
+        color: $background-Color;
       }
       .subtitle {
-        text-align: $signuptext-align;
+        text-align: $leftAlign;
         font: weight 5px;
       }
   }

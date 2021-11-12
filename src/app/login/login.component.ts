@@ -35,14 +35,15 @@ export class LoginComponent implements OnInit {
     }
   ngOnInit(): void {
    this.initialize()
-  }
+  } 
+  // validating forms function 
   initialize(): void{
     this.loginformvalidation = this.formBuilder.group({
       email: ["", [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: ["", [Validators.required, Validators.minLength(4)]]
     })
   }
-
+// login datta submit 
 onSubmit() {
     this.loginAuth.userLogin(this.loginformvalidation.get('email')?.value,
       this.loginformvalidation.get('password')?.value)
