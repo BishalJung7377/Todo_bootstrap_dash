@@ -4,7 +4,7 @@ import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddTaskComponent } from 'src/app/Modal/add-task/add-task.component';
-import { TaskService } from 'src/app/services/TaskServices/task.service';
+import { TaskService } from 'src/app/services/TaskServices/task_service';
 import { list, task } from 'src/app/services/user';
 import { Injectable } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
