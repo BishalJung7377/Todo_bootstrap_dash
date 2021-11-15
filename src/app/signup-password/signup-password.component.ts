@@ -10,10 +10,10 @@ import {
 } from '@angular/forms';
 import { SignupserviceService } from 'src/app/services/SignupApi/signup_service.service';
 import {
-  passwordupperCase,
+  passwordUppercase,
   specialeChars,
   numericPass,
-  Validateconfirmpassword,
+  validateConfirmpassword,
 } from '../Validator/validate';
 import { SignupUserData } from 'src/app/signup/SignUpUserData';
 
@@ -23,7 +23,6 @@ import { SignupUserData } from 'src/app/signup/SignUpUserData';
   styleUrls: ['./signup-password.component.scss']
 })
 export class SignupPasswordComponent implements OnInit {
-
   title = 'TODO APP';
   signupdata: SignupUserData = new SignupUserData();
   PasswordForm!: FormGroup;
@@ -36,13 +35,12 @@ export class SignupPasswordComponent implements OnInit {
   emailSent = 'Email has been sent!';
   resetTxt =
     'Please check your inbox and click in the recieved link to reset password';
-
+  toastr: any;
   constructor(
     private formBuilder: FormBuilder,
     public signupAuth: SignupserviceService,
     public router: Router
   ) {}
-
   ngOnInit(): void {
     this.passsworfFormView();
   }
@@ -54,25 +52,22 @@ export class SignupPasswordComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(8),
-            passwordupperCase(),
+            passwordUppercase(),
             specialeChars(),
             numericPass(),
           ],
         ],
         cpassword: ['', [Validators.required]],
       },
-      { validators: Validateconfirmpassword() }
+      { validators: validateConfirmpassword() }
     );
   }
-
   get nepassword() {
     return this.PasswordForm.get('newpassword');
   }
-
   get confirmpassword() {
     return this.PasswordForm.get('cpassword');
   }
-
   onSubmit() {
     if (this.PasswordForm.valid) {
       this.signupdata = this.signupAuth.userData;
@@ -85,7 +80,9 @@ export class SignupPasswordComponent implements OnInit {
       this.signupAuth.userSignUp(this.signupdata).subscribe((response) => {
       });
     } else {
-      console.warn('Error User');
+      this.toastr.success("Error", "title", {
+        timeOut: 500,
+      }) 
     }
   }
 

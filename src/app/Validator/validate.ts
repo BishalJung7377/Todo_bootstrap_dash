@@ -1,7 +1,7 @@
 import { FormGroup,AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 
-export function passwordupperCase(): ValidatorFn {
+export function passwordUppercase(): ValidatorFn {
     return (control:AbstractControl) : ValidationErrors | null => {
         const value = control.value;
         if (!value) {
@@ -12,7 +12,7 @@ export function passwordupperCase(): ValidatorFn {
         return !validpassword ? {upperCasepassword:true}: null;
     }
 }
-export function Validateconfirmpassword(): ValidatorFn {
+export function validateConfirmpassword(): ValidatorFn {
     return (group: AbstractControl): ValidationErrors | null => {
       let newpassword = group.get('newpassword')?.value;
       let cpassword = group.get('cpassword')?.value;

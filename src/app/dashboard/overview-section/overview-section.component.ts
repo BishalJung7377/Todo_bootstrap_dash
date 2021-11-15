@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview-section.component.scss']
 })
 export class OverviewSectionComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

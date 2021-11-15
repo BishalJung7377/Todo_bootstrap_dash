@@ -30,11 +30,9 @@ export class ForgotPasswordComponent implements OnInit {
     config.backdrop = 'static';
     config.keyboard = false;
   }
-
   ngOnInit(): void {
     this.passwordReset();
   }
-
   // password reset function 
   passwordReset(): void {
     this.resetEmail = this.formBuilder.group({
@@ -48,7 +46,6 @@ export class ForgotPasswordComponent implements OnInit {
       ],
     });
   }
-
   get resetEmailvalue() {
     return this.resetEmail.controls;
   }

@@ -1,4 +1,4 @@
-import { ListService } from './../../services/ListServices/list.service';
+import { ListService } from '../../services/ListServices/list_service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class AddTaskComponent implements OnInit {
   newListtask!: FormGroup;
-
   constructor(
     public modalRef: MdbModalRef<AddTaskComponent>,
     private formBuilder: FormBuilder,
@@ -23,7 +22,6 @@ export class AddTaskComponent implements OnInit {
       ListName: ['', [Validators.required]],
     });
   }
-
   ngOnInit(): void {}
   onSubmit() {
     if (this.newListtask.valid) {
@@ -36,7 +34,7 @@ export class AddTaskComponent implements OnInit {
     }
   }
   showToast(){
-    this.toastr.success("Some Message", "title", {
+    this.toastr.success("List added successfully", "Added", {
       timeOut: 500,
     }) 
     }

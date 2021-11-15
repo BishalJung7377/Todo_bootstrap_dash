@@ -2,11 +2,10 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SignupserviceService } from '../services/SignupApi/signup_service.service';
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;

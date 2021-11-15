@@ -1,4 +1,4 @@
-import { ListService } from './../../services/ListServices/list.service';
+import { ListService } from '../../services/ListServices/list_service';
 import { FormBuilder } from '@angular/forms';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';

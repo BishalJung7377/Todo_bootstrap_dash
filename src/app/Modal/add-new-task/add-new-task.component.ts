@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
 export class AddNewTaskComponent implements OnInit {
   TaskForm!: FormGroup;
   formSubmit = false;
-
   startDate = new Date(2010, 0, 1);
   endDate = new Date(2020, 6, 16, 0, 0, 0, 0);
 
@@ -25,11 +24,9 @@ export class AddNewTaskComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router
   ) {}
-
   ngOnInit(): void {
     this.initialize();
   }
-
   initialize(): void {
     this.TaskForm = this.formBuilder.group({
       taskName: ['', [Validators.required]],
@@ -57,9 +54,8 @@ export class AddNewTaskComponent implements OnInit {
     } else {
     }
   }
-
   showToast() {
-    this.toastr.success('Some Message', 'title', {
+    this.toastr.success('Task Added Successfully', 'Task Added', {
       timeOut: 500,
     });
   }

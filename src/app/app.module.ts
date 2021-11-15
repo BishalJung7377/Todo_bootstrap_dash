@@ -11,7 +11,7 @@ import { TaskTablesComponent } from './dashboard/task-tables/task-tables.compone
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from './auth-gaurd/auth.guard';
+import { AuthGuard } from './auth-gaurd/auth-guard';
 import { InterceptorServiceService } from './services/interceptor_service.service';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
