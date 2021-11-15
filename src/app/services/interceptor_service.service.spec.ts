@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InterceptorServiceService } from './interceptor-service.service';
+import { InterceptorServiceService } from './interceptor_service.service';
 
 describe('InterceptorServiceService', () => {
   let service: InterceptorServiceService;

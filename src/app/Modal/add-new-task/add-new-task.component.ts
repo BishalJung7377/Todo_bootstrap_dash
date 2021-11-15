@@ -3,14 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { TaskService } from 'src/app/services/TaskServices/task.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-task',
   templateUrl: './add-new-task.component.html',
-  styleUrls: ['./add-new-task.component.scss']
+  styleUrls: ['./add-new-task.component.scss'],
 })
 export class AddNewTaskComponent implements OnInit {
-
   TaskForm!: FormGroup;
   formSubmit = false;
 
@@ -20,7 +21,9 @@ export class AddNewTaskComponent implements OnInit {
   constructor(
     public modalRef: MdbModalRef<AddNewTaskComponent>,
     private formBuilder: FormBuilder,
-    private taskAuth: TaskService
+    private taskAuth: TaskService,
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -49,10 +52,15 @@ export class AddNewTaskComponent implements OnInit {
           this.TaskForm.value.date
         )
         .subscribe((response) => {
-          console.log(response);
+          window.location.reload();
         });
     } else {
-      console.log('Error on SUbmitting');
     }
+  }
+
+  showToast() {
+    this.toastr.success('Some Message', 'title', {
+      timeOut: 500,
+    });
   }
 }

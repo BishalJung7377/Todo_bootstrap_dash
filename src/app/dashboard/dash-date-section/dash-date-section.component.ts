@@ -27,7 +27,6 @@ export class DashDateSectionComponent implements OnInit {
   ngOnInit(): void {
     this.showTaskAUth.showTask().subscribe((response:any)=>{
       this.taskData = response
-      console.log(this.taskData);
       
     })
   }

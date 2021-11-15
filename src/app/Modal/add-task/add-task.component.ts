@@ -2,7 +2,8 @@ import { ListService } from './../../services/ListServices/list.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-
+import {ToastrService} from "ngx-toastr";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -14,7 +15,9 @@ export class AddTaskComponent implements OnInit {
   constructor(
     public modalRef: MdbModalRef<AddTaskComponent>,
     private formBuilder: FormBuilder,
-    private modalAuth: ListService
+    private modalAuth: ListService,
+    private toastr: ToastrService,
+    private router: Router
   ) {
     this.newListtask = this.formBuilder.group({
       ListName: ['', [Validators.required]],
@@ -27,10 +30,14 @@ export class AddTaskComponent implements OnInit {
       this.modalAuth
         .createList(this.newListtask.value.ListName)
         .subscribe((response) => {
-          console.log(response);
+          window.location.reload();
         });
     } else {
-      console.log('Error');
     }
   }
+  showToast(){
+    this.toastr.success("Some Message", "title", {
+      timeOut: 500,
+    }) 
+    }
 }

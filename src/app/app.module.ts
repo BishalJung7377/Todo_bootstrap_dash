@@ -11,8 +11,8 @@ import { TaskTablesComponent } from './dashboard/task-tables/task-tables.compone
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from './auth_gaurd/auth.guard';
-import { InterceptorServiceService } from './services/interceptor-service.service';
+import { AuthGuard } from './auth-gaurd/auth.guard';
+import { InterceptorServiceService } from './services/interceptor_service.service';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,6 +42,8 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
+
+import {ToastrModule} from "ngx-toastr";
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +94,12 @@ import {
     NgxMatDatetimePickerModule,
     NgxMatNativeDateModule,
     NgxMatTimepickerModule,
-    MdbModalModule
+    MdbModalModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      progressBar: true,
+      progressAnimation: "increasing"
+    })
   ],
   providers: [
     AuthGuard,

@@ -2,7 +2,7 @@ import { Route } from '@angular/compiler/src/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { APIServiceService } from '../services/apiservice.service';
+import { APIServiceService } from '../services/api_service.service';
 
 @Injectable({
   providedIn: 'root'

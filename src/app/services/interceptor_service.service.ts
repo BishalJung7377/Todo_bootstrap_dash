@@ -7,7 +7,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { APIServiceService } from './apiservice.service';
+import { APIServiceService } from './api_service.service';
 
 @Injectable({
   providedIn: 'root',

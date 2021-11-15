@@ -8,7 +8,7 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { SignupserviceService } from 'src/app/services/SignupApi/signupservice.service';
+import { SignupserviceService } from 'src/app/services/SignupApi/signup_service.service';
 import {
   passwordupperCase,
   specialeChars,
@@ -83,7 +83,6 @@ export class SignupPasswordComponent implements OnInit {
       this.signupdata.password = this.PasswordForm.value.cpassword;
       this.signupdata.gender = this.signupdata.gender;
       this.signupAuth.userSignUp(this.signupdata).subscribe((response) => {
-        console.log(response);
       });
     } else {
       console.warn('Error User');
