@@ -1,4 +1,4 @@
-import { ListService } from '../../services/ListServices/list_service';
+import { ListService } from '../../services/list-services/list_service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';

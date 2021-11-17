@@ -8,7 +8,7 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { SignupserviceService } from 'src/app/services/SignupApi/signup_service.service';
+import { SignupserviceService } from 'src/app/services/signup-api/signup_service.service';
 import {
   passwordUppercase,
   specialeChars,

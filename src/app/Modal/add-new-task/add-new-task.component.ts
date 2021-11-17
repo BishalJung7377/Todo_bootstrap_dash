@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import { TaskService } from 'src/app/services/TaskServices/task_service';
+import { TaskService } from 'src/app/services/task-services/task_service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 

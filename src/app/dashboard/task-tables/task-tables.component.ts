@@ -1,10 +1,10 @@
-import { ListService } from '../../services/ListServices/list_service';
+import { ListService } from '../../services/list-services/list_service';
 import { FormBuilder } from '@angular/forms';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddTaskComponent } from 'src/app/Modal/add-task/add-task.component';
-import { TaskService } from 'src/app/services/TaskServices/task_service';
+import { TaskService } from 'src/app/services/task-services/task_service';
 import { list, task } from 'src/app/services/user';
 import { Injectable } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
@@ -45,7 +45,7 @@ export class TaskTablesComponent implements OnInit {
   }
 
   // open modal for new list 
-  openModal() {
+  openModal():void  {
     this.modalRef = this.modalService.open(AddTaskComponent, {
       modalClass: 'modal-dialog-centered',
     });

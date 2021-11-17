@@ -50,7 +50,7 @@ export class ForgotPasswordComponent implements OnInit {
     return this.resetEmail.controls;
   }
   // modal for sending email 
-  open(content:any) {
+  open(content:any):void  {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }
 }
