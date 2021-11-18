@@ -15,7 +15,7 @@ import {
   numericPass,
   validateConfirmpassword,
 } from '../Validator/validate';
-import { SignupUserData } from 'src/app/signup/SignUpUserData';
+import { SignupUserData } from 'src/app/signup/sign-up-user-data';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup-password',
