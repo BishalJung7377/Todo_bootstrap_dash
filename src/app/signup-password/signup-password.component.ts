@@ -62,10 +62,10 @@ export class SignupPasswordComponent implements OnInit {
       { validators: validateConfirmpassword() }
     );
   }
-  get nepassword() {
+  get newPasswords() {
     return this.setpasswordForm.get('newpassword');
   }
-  get confirmpassword() {
+  get confirmPasswords() {
     return this.setpasswordForm.get('cpassword');
   }
   onSubmit(): void {

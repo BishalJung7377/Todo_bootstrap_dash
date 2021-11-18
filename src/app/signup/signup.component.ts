@@ -61,8 +61,8 @@ export class SignupComponent implements OnInit {
   }
 
   textOnly(event: { key: string }): boolean {
-    let textpattern = /^([a-z])$/;
-    let res = textpattern.test(event.key);
+    let textPattern = /^([a-z])$/;
+    let res = textPattern.test(event.key);
     return res;
   }
 }
