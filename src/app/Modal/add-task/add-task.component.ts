@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -16,7 +18,8 @@ export class AddTaskComponent implements OnInit {
     private formBuilder: FormBuilder,
     private modalAuth: ListService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    public location: Location
   ) {
     this.newListtask = this.formBuilder.group({
       ListName: ['', [Validators.required]],
@@ -28,11 +31,12 @@ export class AddTaskComponent implements OnInit {
       this.modalAuth
         .createList(this.newListtask.value.ListName)
         .subscribe((response) => {
-          // window.location.href="/dashboard"
-          this.router.navigate(['/dashboard'])
-          .then(() => {
-            window.location.reload();
-          });
+          this.router
+            .navigateByUrl('', { skipLocationChange: true })
+            .then(() => {
+              console.log(decodeURI(this.location.path()));
+              this.router.navigate([decodeURI(this.location.path())]);
+            });
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {

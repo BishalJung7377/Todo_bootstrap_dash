@@ -8,6 +8,8 @@ import { TaskService } from 'src/app/services/task-services/task_service';
 import { list, task } from 'src/app/services/user';
 import { Injectable } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-tables',
@@ -30,7 +32,9 @@ export class TaskTablesComponent implements OnInit {
     private _modalService: NgbModal,
     private modalService: MdbModalService,
     private listaDataname: ListService,
-    private showTaskauth: TaskService
+    private showTaskauth: TaskService,
+    private router: Router,
+    public location: Location
   ) {
     this.listaDataname.displayList().subscribe((response: any) => {
       this.listData = response;
@@ -40,17 +44,19 @@ export class TaskTablesComponent implements OnInit {
       this.taskData = response;
     });
   }
-  ngOnInit(): void {
-    setTimeout(() => { this.ngOnInit() }, 100 * 10)
-  }
+  ngOnInit(): void {}
   open(content: string): void {
-    this.modal.open(content, { centered: true, windowClass: 'my-class',  size: 'lg' } );
+    this.modal.open(content, {
+      centered: true,
+      windowClass: 'my-class',
+      size: 'lg',
+    });
   }
 
   // open modal for new list
   openModal(): void {
     this.modalRef = this.modalService.open(AddTaskComponent, {
-      modalClass: 'modal-dialog-centered'});
+      modalClass: 'modal-dialog-centered',
+    });
   }
-  
 }

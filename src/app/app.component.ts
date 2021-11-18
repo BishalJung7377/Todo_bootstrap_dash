@@ -6,12 +6,12 @@ import { APIServiceService } from './services/api_service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'bajratodoangular';
 
-  constructor(private apiService:APIServiceService,private router: Router) {
+  constructor(private apiService: APIServiceService, private router: Router) {
     if (apiService.loggedIn()) {
       router.navigate(['dashboard']);
     }

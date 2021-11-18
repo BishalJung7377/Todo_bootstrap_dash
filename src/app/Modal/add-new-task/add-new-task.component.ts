@@ -5,6 +5,7 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { TaskService } from 'src/app/services/task-services/task_service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-new-task',
@@ -22,7 +23,8 @@ export class AddNewTaskComponent implements OnInit {
     private formBuilder: FormBuilder,
     private taskAuth: TaskService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    public location: Location
   ) {}
   ngOnInit(): void {
     this.initialize();
@@ -49,11 +51,12 @@ export class AddNewTaskComponent implements OnInit {
           this.addnewTaskform.value.any
         )
         .subscribe((response) => {
-          // window.location.href="/dashboard"
-          this.router.navigate(['/dashboard'])
-  .then(() => {
-    window.location.reload();
-  });
+          this.router
+            .navigateByUrl('', { skipLocationChange: true })
+            .then(() => {
+              console.log(decodeURI(this.location.path()));
+              this.router.navigate([decodeURI(this.location.path())]);
+            });
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {
