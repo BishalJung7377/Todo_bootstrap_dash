@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-task-tables',
@@ -34,7 +35,9 @@ export class TaskTablesComponent implements OnInit {
     private listaDataname: ListService,
     private showTaskauth: TaskService,
     private router: Router,
-    public location: Location
+    public location: Location,
+    private toastr: ToastrService,
+
   ) {
     this.listaDataname.displayList().subscribe((response: any) => {
       this.listData = response;
@@ -58,5 +61,19 @@ export class TaskTablesComponent implements OnInit {
     this.modalRef = this.modalService.open(AddTaskComponent, {
       modalClass: 'modal-dialog-centered',
     });
+  }
+  taskSelected(tasksList: any){
+    tasksList.status = true;
+    this.showTaskauth.completedTask(tasksList).subscribe(status =>{
+      this.toastr.warning('Deleted Successfully', 'Delet', {
+        timeOut: 500,
+      });
+      this.router
+            .navigateByUrl('', { skipLocationChange: true })
+            .then(() => {
+              this.router.navigate([decodeURI(this.location.path())]);
+            });
+    })
+   
   }
 }

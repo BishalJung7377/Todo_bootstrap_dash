@@ -31,4 +31,10 @@ export class TaskService {
       `https://6153eda62473940017efaae5.mockapi.io/api/todo/NewTask`
     );
   }
+
+  completedTask(task: any){
+    return this.http.delete(
+      `https://6153eda62473940017efaae5.mockapi.io/api/todo/NewTask` + '/'+ task.id
+    );
+  }
 }

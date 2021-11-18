@@ -17,7 +17,7 @@
         </span>
                 <div class="table__data p-4 mb-2 border border-2 rounded text-start">
                     <section class="task-section" *ngFor="let items of taskData">
-                        <mat-checkbox class="example-margin">
+                        <mat-checkbox class="example-margin" (click)="taskSelected(items)">
                             <span class="display-2--tasktext">{{ items.TaskName }}</span>
                             <button type="button" class="priority ml-5">
                 <span> {{ items.Priority }}</span>
@@ -78,7 +78,7 @@
                                     <div class="accordion-body">
                                         <div class="table__data p-4 mb-2 rounded text-start" *ngFor="let item of taskData">
                                             <section class="task-section">
-                                                <mat-checkbox class="example-margin">
+                                                <mat-checkbox class="example-margin" (click)="taskSelected(item)">
                                                     <span class="display-2--tasktext">{{
                             item.TaskName
                           }}</span>
