@@ -41,13 +41,12 @@ export class TaskTablesComponent implements OnInit {
   }
   ngOnInit(): void {}
   open(content: string): void {
-    this.modal.open(content, { centered: true, windowClass: 'my-class' });
+    this.modal.open(content, { centered: true, windowClass: 'my-class',  size: 'lg' } );
   }
 
   // open modal for new list
   openModal(): void {
     this.modalRef = this.modalService.open(AddTaskComponent, {
-      modalClass: 'modal-dialog-centered',
-    });
+      modalClass: 'modal-dialog-centered'});
   }
 }

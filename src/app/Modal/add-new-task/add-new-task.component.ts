@@ -49,7 +49,7 @@ export class AddNewTaskComponent implements OnInit {
           this.addnewTaskform.value.any
         )
         .subscribe((response) => {
-          window.location.reload();
+          window.location.href="/dashboard"
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {

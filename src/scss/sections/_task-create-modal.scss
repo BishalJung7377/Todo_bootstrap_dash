@@ -6,7 +6,8 @@
 .modal-footer {
     border-top: 0 none;
 }
-::ng-deep .modal-dialog-centered { 
+
+::ng-deep .modal-dialog-centered {
     max-width: 50%;
     width: 50%;
 }
@@ -18,23 +19,23 @@
     transition: 0.3s;
     margin-top: -34px;
     margin-left: 20px;
-    
-  }
+}
 
-  input[type="date"] {
+input[type="date"] {
     padding-left: 40px;
     border-radius: 6px;
-    margin-top: 19px;
-   
-  }
-  .tasknameerror {
+    margin-top: -1px;
+}
+
+.tasknameerror {
     color: red;
     margin-right: 2em;
-  }
-  .modal-calandar{
+}
+
+.modal-calandar {
     position: $positionAbsolute;
     left: $zeroValue;
-    color:black;
+    color: black;
     transition: $transition;
     margin-top: -3px;
-  }
+}

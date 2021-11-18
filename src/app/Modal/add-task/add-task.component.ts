@@ -28,7 +28,7 @@ export class AddTaskComponent implements OnInit {
       this.modalAuth
         .createList(this.newListtask.value.ListName)
         .subscribe((response) => {
-          window.location.reload();
+          window.location.href="/dashboard"
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {
