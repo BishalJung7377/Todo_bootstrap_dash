@@ -1,79 +1,58 @@
 <div class="modal-header">
-  <h2 class="modal-title" id="modal-title">Create New Task</h2>
-  <button
-    type="button"
-    class="close"
-    aria-describedby="modal-title"
-    (click)="modalRef.close('Cross click')"
-  >
+    <h2 class="modal-title" id="modal-title">Create New Task</h2>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="modalRef.close('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <form [formGroup]="TaskForm" #taskform="ngForm" (onSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="createlIst">Create New Task</label>
-      <input
-        type="text"
-        class="form-control form-control-lg"
-        formControlName="taskName"
-        name="taskName"
-        size="40"
-        placeholder="Task Name Here"
-      />
-      <span
-        class="tasknameerror mr-2"
-        *ngIf="
+    <form [formGroup]="addnewTaskform" #taskform="ngForm" (onSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="createlIst">Create New Task</label>
+            <input type="text" class="form-control form-control-lg" formControlName="taskName" name="taskName" size="40" placeholder="Task Name Here" />
+            <span class="tasknameerror mr-2" *ngIf="
           formValidation.taskName.invalid && formValidation.taskName.touched
-        "
+        ">task name required</span
       >
-        task name required</span
-      >
-   
-    <div class="row">
-      <div class="col">
-
-        <label for="formGroupExampleInput">Choose List Name</label>
-        <select class="custom-select" formControlName="listName">
-          <option value="" disabled selected>Choose List Name</option>
-          <option value="Personal">Personal</option>
-          <option value="Work">Work</option>
-          <option value="College Work">College Work</option>
-        </select>
-      </div>
-      <div class="col">
-
-        <label for="formGroupExampleInput">Choose Priority</label>
-        <select class="custom-select" formControlName="priority">
-          <option value="" disabled selected>Choose Priority</option>
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select>
-      </div>
-      <div class="col mt-1">
-
-        <label for="formGroupExampleInput">Choose Date and Time</label>
-        <input
-          type="date"
-          class="form-control "
-          ngModel
-          formControlName="date"
-          placeholder="Select your date of birth"
-          ngbDatepicker
-          #d="ngbDatepicker"
-        />
-        <!-- #d="ngbDatepicker" -->
-        <div class="modal-calandar">
-          <i
-            class="fas fa-calendar-alt"
-            aria-hidden="true"
-            (click)="d.toggle()"
-          ></i>
+      <div class="row">
+        <div class="col">
+          <label for="formGroupExampleInput">Choose List Name</label>
+          <select class="custom-select" formControlName="listName">
+            <option value="" disabled selected>Choose List Name</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="College Work">College Work</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="formGroupExampleInput">Choose Priority</label>
+          <select class="custom-select" formControlName="priority">
+            <option value="" disabled selected>Choose Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+        <div class="col mt-1">
+          <label for="formGroupExampleInput">Choose Date and Time</label>
+          <input
+            type="date"
+            class="form-control"
+            ngModel
+            formControlName="date"
+            placeholder="Select your date of birth"
+            ngbDatepicker
+            #d="ngbDatepicker"
+          />
+          <div class="modal-calandar">
+            <i
+              class="fas fa-calendar-alt"
+              aria-hidden="true"
+              (click)="d.toggle()"
+            ></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </form>
 </div>
 <div class="modal-footer">
@@ -89,7 +68,7 @@
     (click)="onSubmit()"
     class="btn btn-danger"
     (click)="modalRef.close('Ok click')"
-    [disabled]="!TaskForm.valid"
+    [disabled]="!addnewTaskform.valid"
     (click)="showToast()"
   >
     Save

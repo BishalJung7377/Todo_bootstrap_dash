@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-new-task.component.scss'],
 })
 export class AddNewTaskComponent implements OnInit {
-  TaskForm!: FormGroup;
+  addnewTaskform!: FormGroup;
   formSubmit = false;
   startDate = new Date(2010, 0, 1);
   endDate = new Date(2020, 6, 16, 0, 0, 0, 0);
@@ -28,7 +28,7 @@ export class AddNewTaskComponent implements OnInit {
     this.initialize();
   }
   initialize(): void {
-    this.TaskForm = this.formBuilder.group({
+    this.addnewTaskform = this.formBuilder.group({
       taskName: ['', [Validators.required]],
       listName: ['', [Validators.required]],
       priority: ['', [Validators.required]],
@@ -36,25 +36,28 @@ export class AddNewTaskComponent implements OnInit {
     });
   }
   get formValidation() {
-    return this.TaskForm.controls;
+    return this.addnewTaskform.controls;
   }
 
-  onSubmit() {
-    if (this.TaskForm.valid) {
+  onSubmit(): void {
+    if (this.addnewTaskform.valid) {
       this.taskAuth
         .createTask(
-          this.TaskForm.value.taskName,
-          this.TaskForm.value.listName,
-          this.TaskForm.value.priority,
-          this.TaskForm.value.any
+          this.addnewTaskform.value.taskName,
+          this.addnewTaskform.value.listName,
+          this.addnewTaskform.value.priority,
+          this.addnewTaskform.value.any
         )
         .subscribe((response) => {
           window.location.reload();
         });
     } else {
+      this.toastr.success('Error while adding data', 'Error', {
+        timeOut: 500,
+      });
     }
   }
-  showToast() {
+  showToast(): void {
     this.toastr.success('Task Added Successfully', 'Task Added', {
       timeOut: 500,
     });

@@ -8,19 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginformvalidation!: FormGroup;
+  loginForm!: FormGroup;
   loginAuthResp: any;
   hide = true;
   title = 'TODO APP';
-  logintoyAcc = 'Login To Your account';
-  welcomeback = 'Welcome back! Please login to your account';
-  elabel = 'Email Address';
-  plabel = 'Password';
-  emailerrmsg = 'Email is required*';
-  passworderrmsg = 'Password is required*';
-  passforget = 'Forgot Password?';
-  noregister = 'Not Registered Yet?';
-  creataCC = 'Create account';
+  logintoyourAccount = 'Login To Your account';
+  welcomeBack = 'Welcome back! Please login to your account';
+  emailLabel = 'Email Address';
+  passwordLabel = 'Password';
+  emailerrorMsg = 'Email is required*';
+  passworderrorMsg = 'Password is required*';
+  passwordForget = 'Forgot Password?';
+  notRegister = 'Not Registered Yet?';
+  creatAccount = 'Create account';
   email!: string;
   password!: string;
   submitted = false;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
   // validating forms function
   initialize(): void {
-    this.loginformvalidation = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: [
         '',
         [
@@ -47,12 +47,12 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
-  // login datta submit
-  onSubmit() {
+  // login data submit
+  onSubmit(): void {
     this.loginAuth
       .userLogin(
-        this.loginformvalidation.get('email')?.value,
-        this.loginformvalidation.get('password')?.value
+        this.loginForm.get('email')?.value,
+        this.loginForm.get('password')?.value
       )
       .subscribe((response) => {
         this.loginAuthResp = response;
@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         }
       });
   }
-  get loginValidation() {
-    return this.loginformvalidation.controls;
+  get loginFormcontroller() {
+    return this.loginForm.controls;
   }
 }

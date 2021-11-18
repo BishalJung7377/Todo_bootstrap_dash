@@ -7,7 +7,6 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss'],
   providers: [NgbModalConfig, NgbModal],
-
 })
 export class ForgotPasswordComponent implements OnInit {
   title = 'TODO APP';
@@ -17,12 +16,13 @@ export class ForgotPasswordComponent implements OnInit {
   emailLabel = 'Email Address';
   send = 'Send';
   login = 'Login';
-  resetEmail!: FormGroup;
+  forgotPasswordform!: FormGroup;
   submit = false;
   email!: string;
   emailSent = 'Email has been sent!';
-  resetTxt ='Please check your inbox and click in the recieved link to reset password';
-    constructor(
+  resetTxt =
+    'Please check your inbox and click in the recieved link to reset password';
+  constructor(
     private formBuilder: FormBuilder,
     config: NgbModalConfig,
     private modal: NgbModal
@@ -33,9 +33,9 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.passwordReset();
   }
-  // password reset function 
+  // password reset function
   passwordReset(): void {
-    this.resetEmail = this.formBuilder.group({
+    this.forgotPasswordform = this.formBuilder.group({
       email: [
         '',
         [
@@ -46,11 +46,11 @@ export class ForgotPasswordComponent implements OnInit {
       ],
     });
   }
-  get resetEmailvalue() {
-    return this.resetEmail.controls;
+  get resetEmailController() {
+    return this.forgotPasswordform.controls;
   }
-  // modal for sending email 
-  open(content:any):void  {
+  // modal for sending email
+  open(content: any): void {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }
 }

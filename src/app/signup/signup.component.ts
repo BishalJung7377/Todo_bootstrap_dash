@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
       date: ['', [Validators.required]],
     });
   }
-  onSubmit() {
+  onSubmit(): void {
     if (this.signupForm.valid) {
       this.signupAuth.userData = this.signupForm.value;
       localStorage.setItem(
@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit {
     }
     this.router.navigate(['/setpassword']);
   }
-  get signupValidData() {
+  get signupFormcontroller() {
     return this.signupForm.controls;
   }
   numericOnly(event: { key: string }): boolean {

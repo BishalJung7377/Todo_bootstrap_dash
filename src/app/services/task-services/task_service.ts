@@ -8,14 +8,13 @@ import { environment } from 'src/environments/environment';
 })
 export class TaskService {
   constructor(private http: HttpClient) {}
-
   // create task
   createTask(
     TaskName: string,
     ListName: string,
     Priority: string,
     Date: string
-  ){
+  ) {
     return this.http.post(
       `https://6153eda62473940017efaae5.mockapi.io/api/todo/NewTask`,
       {
@@ -26,7 +25,6 @@ export class TaskService {
       }
     );
   }
-
   ///displaytask
   showTask() {
     return this.http.get(

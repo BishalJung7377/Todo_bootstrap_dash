@@ -16,36 +16,36 @@ import {
   validateConfirmpassword,
 } from '../Validator/validate';
 import { SignupUserData } from 'src/app/signup/SignUpUserData';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup-password',
   templateUrl: './signup-password.component.html',
-  styleUrls: ['./signup-password.component.scss']
+  styleUrls: ['./signup-password.component.scss'],
 })
 export class SignupPasswordComponent implements OnInit {
   title = 'TODO APP';
-  signupdata: SignupUserData = new SignupUserData();
-  PasswordForm!: FormGroup;
-  logintext = 'Login';
-  hide = true;
-  hidenew = true;
+  signupData: SignupUserData = new SignupUserData();
+  setpasswordForm!: FormGroup;
+  loginText = 'Login';
+  hidePassword = true;
+  hidenewPassword = true;
   submit = false;
-  newpassword!: string;
-  cpassword!: string;
+  newPassword!: string;
+  confirmPassword!: string;
   emailSent = 'Email has been sent!';
   resetTxt =
     'Please check your inbox and click in the recieved link to reset password';
-  toastr: any;
   constructor(
     private formBuilder: FormBuilder,
     public signupAuth: SignupserviceService,
-    public router: Router
+    private toastr: ToastrService,
+    private router: Router
   ) {}
   ngOnInit(): void {
-    this.passsworfFormView();
+    this.passswordFormView();
   }
-  passsworfFormView(): void {
-    this.PasswordForm = this.formBuilder.group(
+  passswordFormView(): void {
+    this.setpasswordForm = this.formBuilder.group(
       {
         newpassword: [
           '',
@@ -63,27 +63,32 @@ export class SignupPasswordComponent implements OnInit {
     );
   }
   get nepassword() {
-    return this.PasswordForm.get('newpassword');
+    return this.setpasswordForm.get('newpassword');
   }
   get confirmpassword() {
-    return this.PasswordForm.get('cpassword');
+    return this.setpasswordForm.get('cpassword');
   }
-  onSubmit() {
-    if (this.PasswordForm.valid) {
-      this.signupdata = this.signupAuth.userData;
-      this.signupdata.name = this.signupdata.name;
-      this.signupdata.email = this.signupdata.email;
-      this.signupdata.date = this.signupdata.date;
-      this.signupdata.phone = this.signupdata.phone;
-      this.signupdata.password = this.PasswordForm.value.cpassword;
-      this.signupdata.gender = this.signupdata.gender;
-      this.signupAuth.userSignUp(this.signupdata).subscribe((response) => {
+  onSubmit(): void {
+    if (this.setpasswordForm.valid) {
+      this.signupData = this.signupAuth.userData;
+      this.signupData.name = this.signupData.name;
+      this.signupData.email = this.signupData.email;
+      this.signupData.date = this.signupData.date;
+      this.signupData.phone = this.signupData.phone;
+      this.signupData.password = this.setpasswordForm.value.cpassword;
+      this.signupData.gender = this.signupData.gender;
+      this.signupAuth.userSignUp(this.signupData).subscribe((response) => {
+        window.location.href = '';
       });
     } else {
-      this.toastr.success("Error", "title", {
+      this.toastr.success('Error', 'title', {
         timeOut: 500,
-      }) 
+      });
     }
   }
-
+  showToast(): void {
+    this.toastr.success('Registered Successfully', 'Registered', {
+      timeOut: 500,
+    });
+  }
 }

@@ -12,7 +12,7 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 @Component({
   selector: 'app-task-tables',
   templateUrl: './task-tables.component.html',
-  styleUrls: ['./task-tables.component.scss']
+  styleUrls: ['./task-tables.component.scss'],
 })
 export class TaskTablesComponent implements OnInit {
   panelOpenState = false;
@@ -33,19 +33,19 @@ export class TaskTablesComponent implements OnInit {
   ) {
     this.listaDataname.displayList().subscribe((response: any) => {
       this.listData = response;
-      (this.listCounter = this.listData.length)
+      this.listCounter = this.listData.length;
     });
     this.showTaskauth.showTask().subscribe((response: any) => {
       this.taskData = response;
     });
   }
   ngOnInit(): void {}
-  open(content:string):void {
+  open(content: string): void {
     this.modal.open(content, { centered: true, windowClass: 'my-class' });
   }
 
-  // open modal for new list 
-  openModal():void  {
+  // open modal for new list
+  openModal(): void {
     this.modalRef = this.modalService.open(AddTaskComponent, {
       modalClass: 'modal-dialog-centered',
     });

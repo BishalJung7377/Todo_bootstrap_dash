@@ -2,12 +2,12 @@ import { ListService } from '../../services/list-services/list_service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import {ToastrService} from "ngx-toastr";
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.scss']
+  styleUrls: ['./add-task.component.scss'],
 })
 export class AddTaskComponent implements OnInit {
   newListtask!: FormGroup;
@@ -23,7 +23,7 @@ export class AddTaskComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
-  onSubmit() {
+  onSubmit(): void {
     if (this.newListtask.valid) {
       this.modalAuth
         .createList(this.newListtask.value.ListName)
@@ -31,11 +31,14 @@ export class AddTaskComponent implements OnInit {
           window.location.reload();
         });
     } else {
+      this.toastr.success('Error while adding data', 'Error', {
+        timeOut: 500,
+      });
     }
   }
-  showToast(){
-    this.toastr.success("List added successfully", "Added", {
+  showToast(): void {
+    this.toastr.success('List added successfully', 'Added', {
       timeOut: 500,
-    }) 
-    }
+    });
+  }
 }

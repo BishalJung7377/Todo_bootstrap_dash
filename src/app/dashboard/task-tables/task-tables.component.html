@@ -1,67 +1,61 @@
 <section class="tasktable" id="tasktable">
-  <div class="container">
-    <!-- todays task  -->
+    <div class="container">
+        <!-- todays task  -->
 
-    <div class="row">
-      <div
-        class="
+        <div class="row">
+            <div class="
           col-lg-4 col-md-4 col-sm-12 col-xs-12
           task-tables
           rounded
           p-2
           mb-2
           text-start
-        "
-      >
-        <!-- todays task  -->
-        <span class="display-2--overviewtext"
-          >Today's Task
+        ">
+                <!-- todays task  -->
+                <span class="display-2--overviewtext">Today's Task
           <a class="nav-button" type="button">{{ listCounter }}</a>
         </span>
-        <div class="table__data p-4 mb-2 border border-2 rounded text-start">
-          <section class="task-section"  *ngFor="let items of taskData">
-            <mat-checkbox class="example-margin">
-              <span class="display-2--tasktext">{{ items.TaskName }}</span>
-              <button type="button" class="priority ml-5">
+                <div class="table__data p-4 mb-2 border border-2 rounded text-start">
+                    <section class="task-section" *ngFor="let items of taskData">
+                        <mat-checkbox class="example-margin">
+                            <span class="display-2--tasktext">{{ items.TaskName }}</span>
+                            <button type="button" class="priority ml-5">
                 <span> {{ items.Priority }}</span>
               </button>
-            </mat-checkbox>
-            <br />
-            <span class="display-2--tasksubtitletext fw-light text-center"
-              >{{ items.ListName }}</span
-            >
-            <mat-divider class="mt-4"></mat-divider>
-          </section>
-        </div>
-      </div>
-      <!-- listname  -->
-      <div class="col-lg-2 col-md-2"></div>
-      <div
-        class="
+                        </mat-checkbox>
+                        <br />
+                        <span class="display-2--tasksubtitletext fw-light text-center">{{
+              items.ListName
+            }}</span>
+                        <mat-divider class="mt-4"></mat-divider>
+                    </section>
+                </div>
+            </div>
+            <!-- listname  -->
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="
           col-lg-6 col-md-8 col-sm-12 col-xs-12
           list-tables
           rounded
           p-2
           m-auto
-        "
-      >
-        <div class="row mr-2">
-          <div class="col-md-6">
-            <span class="display--2">
+        ">
+                <div class="row mr-2">
+                    <div class="col-md-6">
+                        <span class="display--2">
               <span class="display-2--overviewtext">List Name </span>
-            </span>
-          </div>
-          <div class="col-md-6 text-end">
-            <div class="newlistbtn">
-              <button type="button" class="btn-newlist" (click)="openModal()">
+                        </span>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="newlistbtn">
+                            <button type="button" class="btn-newlist" (click)="openModal()">
                 <span> Create new list </span>
               </button>
-            </div>
-          </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div
-          class="
+                <div class="
             table__data
             p-4
             mb-2
@@ -70,69 +64,42 @@
             p-2
             mb-2
             text-start
-          "
-        >
-          <section class="list-section">
-            <div class="accordion accordion-flush"  id="accordionFlushExample">
-              <div class="accordion-item"       *ngFor="let item of listData" >
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button
-                    class="accordion-button collapsed border-bottom-0"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
-                  >
-                  {{ item.ListName
-                  }} &nbsp; &nbsp; &nbsp;
+          ">
+                    <section class="list-section">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item" *ngFor="let item of listData">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    {{ item.ListName }} &nbsp; &nbsp; &nbsp;
                     <a class="nav-button" type="button">{{ listCounter }}</a>
                   </button>
-                </h2>
-                <div
-                  id="flush-collapseOne"
-            
-                  class="accordion-collapse collapse border border-2
-                  rounded"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div
-                      class="
-                        table__data
-                        p-4
-                        mb-2
-                        rounded
-                        text-start
-                      "
-                      *ngFor="let item of taskData"
-                    >
-                      <section class="task-section">
-                        <mat-checkbox class="example-margin">
-                          <span class="display-2--tasktext"
-                            >{{ item.TaskName }}</span
-                          >
-                        </mat-checkbox>
-                        <span
-                          class="
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse border border-2 rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="table__data p-4 mb-2 rounded text-start" *ngFor="let item of taskData">
+                                            <section class="task-section">
+                                                <mat-checkbox class="example-margin">
+                                                    <span class="display-2--tasktext">{{
+                            item.TaskName
+                          }}</span>
+                                                </mat-checkbox>
+                                                <span class="
                             display-2--tasksubtitletext
                             fw-light
                             text-center
-                          "
-                          >{{ item.Priority }}</span
+                          ">{{ item.Priority }}</span
                         >
                         <button type="button" class="priority ml-5">
-                          <span> {{ item.Date | date:'dd MMMM hh:mm aa'}}</span>
+                          <span>
+                            {{ item.Date | date: "dd MMMM hh:mm aa" }}</span
+                          >
                         </button>
-                <mat-divider class="mt-2"></mat-divider>
-
+                        <mat-divider class="mt-2"></mat-divider>
                       </section>
                     </div>
                   </div>
                 </div>
                 <mat-divider class="mt-2"></mat-divider>
-
               </div>
             </div>
           </section>
