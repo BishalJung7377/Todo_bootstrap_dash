@@ -8,14 +8,14 @@ import { APIServiceService } from '../services/api_service.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private apiService: APIServiceService,
-    private router: Router) {
+  constructor(private apiService:APIServiceService,
+    private router:Router){
   }
-  canActivate(): boolean {
-    if (this.apiService.loggedIn()) {
+  canActivate(): boolean{
+    if (this. apiService.loggedIn()){
       return true
     }
-    else {
+    else{
       this.router.navigate([''])
       return false
     }
