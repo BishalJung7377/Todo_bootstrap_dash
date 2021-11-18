@@ -54,7 +54,6 @@ export class AddNewTaskComponent implements OnInit {
           this.router
             .navigateByUrl('', { skipLocationChange: true })
             .then(() => {
-              console.log(decodeURI(this.location.path()));
               this.router.navigate([decodeURI(this.location.path())]);
             });
         });
