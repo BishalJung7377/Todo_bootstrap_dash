@@ -21,6 +21,7 @@ export class TaskTablesComponent implements OnInit {
   listData: list[] = [];
   listCounter: number = 0;
   taskData: task[] = [];
+  dataRefresher: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,7 +40,9 @@ export class TaskTablesComponent implements OnInit {
       this.taskData = response;
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => { this.ngOnInit() }, 100 * 10)
+  }
   open(content: string): void {
     this.modal.open(content, { centered: true, windowClass: 'my-class',  size: 'lg' } );
   }
@@ -49,4 +52,5 @@ export class TaskTablesComponent implements OnInit {
     this.modalRef = this.modalService.open(AddTaskComponent, {
       modalClass: 'modal-dialog-centered'});
   }
+  
 }
