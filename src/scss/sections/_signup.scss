@@ -1,38 +1,36 @@
-
 @import "../components/variables";
-
-
 .signup-section {
     margin: 10em auto;
-  }
-
-
+}
 
 .login-container {
     margin-top: $tenEm;
-    font-family:$font-family;
-    padding:$rem;
-  }
-  .login-container .image-holder {
+    font-family: $font-family;
+    padding: $rem;
+}
+
+.login-container .image-holder {
     display: $tableCell;
     width: $Auto;
     background: $backimg;
-    position:$positionRelative;
+    position: $positionRelative;
     background-repeat: repeat-x;
-  }
-  .title {
+}
+
+.title {
     text-align: $leftAlign;
     font-weight: bold;
     margin: $Auto;
     color: $background-Color;
     font-weight: bolder;
-  }
-  .subtitle {
+}
+
+.subtitle {
     text-align: $leftAlign;
     font: weight $texPixel;
-  }
-  
-  .login-container .form-container {
+}
+
+.login-container .form-container {
     display: table;
     max-width: 900px;
     width: $widthOnehundred;
@@ -41,8 +39,9 @@
     padding: $rem;
     box-shadow: 2px 5px $twentyPx rgba(0, 0, 0, 0.1);
     background: $primaryColor;
-  }
-  .next-btn {
+}
+
+.next-btn {
     background-color: $background-Color;
     color: $primaryColor;
     padding: 18px $twentyPx;
@@ -51,152 +50,164 @@
     width: $widthOnehundred;
     border-radius: $texPixel;
     border: none;
-  }
-  
-  .icon {
+}
+
+.icon {
     margin-top: $texPixel;
-  }
-  .login-container form {
-    display:$tableCell;
+}
+
+.login-container form {
+    display: $tableCell;
     width: $fourHundPixel;
     background-color: $whiteBackgroundColor;
     padding: $fortyPixel 60px;
-  }
-  
+}
 
-
-
-  .email-login {
+.email-login {
     display: $flexDispay;
     flex-direction: column;
     width: $fourHundPixel;
-  }
-  .email-login label {
-    color: rgb(170 166 166);
-  }
+}
 
+.email-login label {
+    color: rgb(170 166 166);
+}
 
 input[type="text"],
 input[type="password"],
 input[type="date"],
 input[type="alphanumeric"] {
-  padding: $fiftenPxx $twentyPx;
-  margin-top: $eightPixel;
-  margin-bottom: $fiftenPxx;
-  border: 1px solid #ccc;
-  border-radius: $eightPixel;
-  box-sizing: border-box;
-  width: 100% !important;
-
+    padding: $fiftenPxx 50px;
+    margin-top: $eightPixel;
+    margin-bottom: $fiftenPxx;
+    border: 1px solid #ccc;
+    border-radius: $eightPixel;
+    box-sizing: border-box;
+    width: 100% !important;
 }
 
 .iconsinput input[type="text"],
 input[type="password"],
 input[type="date"] {
-  padding-left: $fortyPixel;
-  border-radius: 6px;
+    padding-left: $fortyPixel;
+    border-radius: 6px;
 }
+
 .iconsinput input[type="alphanumeric"] {
-  padding-left: $texPixel;
+    padding-left: $texPixel;
 }
+
 .iconsinput {
-  position: $positionRelative;
+    position: $positionRelative;
 }
+
 .iconsinput i {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  top: 9px $eightPixel;
-  transition: $transition;
-  margin-top: $marign28;
-  margin-left: $twentyPx;
-  
+    position: $positionAbsolute;
+    left: $zeroValue;
+    top: 9px $eightPixel;
+    transition: $transition;
+    margin-top: $marign28;
+    margin-left: $twentyPx;
 }
-.iconsinput input[type="text"]:focus + i {
-  color: $background-Color;
+
+.iconsinput input[type="text"]:focus+i {
+    color: $background-Color;
 }
-.iconsinput input[type="password"]:focus + i {
-  color: $background-Color;
+
+.iconsinput input[type="password"]:focus+i {
+    color: $background-Color;
 }
+
 .phNumber {
-  margin-left: $margin120;
-  margin-top: $seventyneg;
+    margin-left: $margin120;
+    margin-top: $seventyneg;
 }
+
 .phoneIcon {
     margin-left: 15px;
     margin-top: -50px;
     margin-bottom: 20px;
-  }
- .flag {
+}
+
+.flag {
     margin-left: 15px;
-  margin-top: -50px;
-  margin-bottom: 20px;
-  
+    margin-top: -50px;
+    margin-bottom: 20px;
 }
-.fa-phone-alt{
-  color: black;
+
+.fa-phone-alt {
+    color: black;
 }
+
 .mateye {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: #aaa;
-  transition:$transition;
-  margin-top: -53px;
-  margin-left: 330px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: #aaa;
+    transition: $transition;
+    margin-top: -53px;
+    margin-left: 330px;
 }
+
 .tick {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: $noerrColor;
-  transition: $transition;
-  margin-top: $seventyneg;
-  margin-left: 320px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: $noerrColor;
+    transition: $transition;
+    margin-top: $seventyneg;
+    margin-left: 320px;
 }
+
 .tickclose {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: $errorColor;
-  transition: $transition;
-  margin-top: $seventyneg;
-  margin-left: 320px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: $errorColor;
+    transition: $transition;
+    margin-top: $seventyneg;
+    margin-left: 320px;
 }
 
 .emailerror {
-  color: $errorColor;
+    color: $errorColor;
 }
+
 .passworderror {
-  color: $errorColor;
+    color: $errorColor;
 }
+
 .mat-radio-button {
-  margin-left: $twentyPx;
+    margin-left: $twentyPx;
 }
+
 .invalid-feedback {
-  display: block;
+    display: block;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: $background-Color !important; /*inner circle color change*/
+    background-color: $background-Color !important;
+    /*inner circle color change*/
 }
 
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
-  .mat-radio-outer-circle {
-  border-color: $background-Color !important; /*outer ring color change*/
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: $background-Color !important;
+    /*outer ring color change*/
 }
+
 .btn-outline-secondary .calendar {
-  margin-top: $texPixel;
+    margin-top: $texPixel;
 }
-@media screen and (max-width:700px) {
 
+@media screen and (max-width:700px) {
     input[type="text"],
     input[type="password"],
     input[type="date"],
     input[type="alphanumeric"] {
-      padding: $fiftenPxx $twentyPx;
-      margin-top: $eightPixel;
-      margin-bottom: $fiftenPxx;
-      border: 1px solid #ccc;
-      border-radius: $eightPixel;
-      box-sizing: border-box;
-      width: 100% !important;
+        padding: $fiftenPxx $twentyPx;
+        margin-top: $eightPixel;
+        margin-bottom: $fiftenPxx;
+        border: 1px solid #ccc;
+        border-radius: $eightPixel;
+        box-sizing: border-box;
+        width: 100% !important;
     }
     .tick {
         position: $positionAbsolute;
@@ -205,30 +216,29 @@ input[type="date"] {
         transition: $transition;
         margin-top: $seventyneg;
         margin-left: 150px;
-
-      }
-      .tickclose {
+    }
+    .tickclose {
         position: $positionAbsolute;
         left: $zeroValue;
         color: $errorColor;
         transition: $transition;
         margin-top: $seventyneg;
         margin-left: 150px;
-      }
-  
-  }
-  @media screen and (max-width:700px) {
+    }
+}
+
+@media screen and (max-width:700px) {
     .login-container {
         margin-top: 10px;
-        padding:10px;
-      }
-      .login-container form {
-        display:$tableCell;
-        width:100px;
+        padding: 10px;
+    }
+    .login-container form {
+        display: $tableCell;
+        width: 100px;
         background-color: $whiteBackgroundColor;
         padding: $fortyPixel 60px;
-      }
-      .login-container .form-container {
+    }
+    .login-container .form-container {
         display: table;
         max-width: 100px;
         width: 100px;
@@ -236,10 +246,9 @@ input[type="date"] {
         border-radius: $twentyPx;
         padding: $rem;
         box-shadow: 2px 5px $twentyPx rgba(0, 0, 0, 0.1);
-        background:$primaryColor;
-      }
-
-      .next-btn {
+        background: $primaryColor;
+    }
+    .next-btn {
         background-color: $background-Color;
         color: $primaryColor;
         padding: 18px $twentyPx;
@@ -248,15 +257,15 @@ input[type="date"] {
         width: 50%;
         border-radius: $texPixel;
         border: none;
-      }
-      .title {
+    }
+    .title {
         text-align: $leftAlign;
         font-weight: small;
         margin: $Auto;
         color: $background-Color;
-      }
-      .subtitle {
+    }
+    .subtitle {
         text-align: $leftAlign;
         font: weight 5px;
-      }
-  }
+    }
+}
