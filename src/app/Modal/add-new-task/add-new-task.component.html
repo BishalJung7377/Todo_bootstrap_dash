@@ -20,9 +20,6 @@
               <label for="formGroupExampleInput">Choose List Name</label>
               <select class="custom-select" formControlName="listName">
                 <option value="" disabled selected>Choose List Name</option>
-                <option value="Personal">Personal</option>
-                <option value="Work">Work</option>
-                <option value="College Work">College Work</option>
                 <option
                   *ngFor="let list of listData"
                   [value]="list.ListName"
