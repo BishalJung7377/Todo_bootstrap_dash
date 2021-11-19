@@ -25,7 +25,7 @@ export class TaskTablesComponent implements OnInit {
   listCounter: number = 0;
   taskData: task[] = [];
   dataRefresher: any;
-
+  taskCounter: number =0;
   constructor(
     private formBuilder: FormBuilder,
     config: NgbModalConfig,
@@ -45,6 +45,7 @@ export class TaskTablesComponent implements OnInit {
     });
     this.showTaskauth.showTask().subscribe((response: any) => {
       this.taskData = response;
+      this.taskCounter = this.taskData.length;
     });
   }
   ngOnInit(): void {}

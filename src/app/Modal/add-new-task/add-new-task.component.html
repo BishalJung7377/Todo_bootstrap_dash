@@ -6,14 +6,14 @@
         <span aria-hidden="true">&times;</span>
       </button>
         </div>
-        <div class="modal-body">
+        <div class="row">
             <form [formGroup]="addnewTaskform" #taskform="ngForm" (onSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="createlIst">Create New Task</label>
                     <input type="text" class="form-control form-control-lg" formControlName="taskName" name="taskName" size="40" placeholder="Task Name Here" />
-                    <span class="tasknameerror mr-2" *ngIf="
+                    <span class="tasknameerror text-start justify-content-start" *ngIf="
               formValidation.taskName.invalid && formValidation.taskName.touched
-            ">task name required</span
+            ">Task name required</span
           >
           <div class="row">
             <div class="col">
@@ -45,13 +45,7 @@
                 ngbDatepicker
                 #d="ngbDatepicker"
               />
-              <div class="modal-calandar">
-                <i
-                  class="fas fa-calendar-alt"
-                  aria-hidden="true"
-                  (click)="d.toggle()"
-                ></i>
-              </div>
+            
             </div>
           </div>
         </div>
