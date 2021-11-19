@@ -3,44 +3,44 @@
         <!-- todays task  -->
 
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 task-tables rounded p-2  mb-2 text-start ">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 task-tables rounded p-2 mb-2 text-start">
                 <!-- todays task  -->
-                <span class="display-2--overviewtext">Today's Task
-                   <a class="nav-button" type="button">{{ taskCounter }}</a>
-               </span>
+                <span class="display-2--overviewtext">
+                  Today's Task
+                  <a class="nav-button" type="button">{{ taskCounter }}</a>
+              </span>
                 <div class="table__data p-4 mb-2 border border-2 rounded text-start">
                     <section class="task-section" *ngFor="let items of taskData">
                         <mat-checkbox class="example-margin" (click)="taskSelected(items)">
                             <span class="display-2--tasktext">{{ items.TaskName }}</span>
                             <button type="button" class="priority ml-5">
-                               <span  [ngClass]="{
-                                high: items.Priority === 'High',
-                                medium: items.Priority === 'Medium',
-                                low: items.Priority === 'Low'
-                              }"
-          > {{ items.Priority }}</span>
-                            </button>
+                              <span
+                                  [ngClass]="{
+                                     high: items.Priority === 'High', medium: items.Priority === 'Medium', low: items.Priority === 'Low'}">
+                                  {{ items.Priority }}
+                              </span>
+                          </button>
                         </mat-checkbox>
                         <br />
-                        <span class="display-2--tasksubtitletext fw-light text-center">{{items.ListName}}</span>
+                        <span class="display-2--tasksubtitletext fw-light text-center">{{ items.ListName }}</span>
                         <mat-divider class="mt-4"></mat-divider>
                     </section>
                 </div>
             </div>
             <!-- listname  -->
             <div class="col-lg-2 col-md-2"></div>
-            <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12  list-tables rounded p-2 m-auto">
+            <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 list-tables rounded p-2 m-auto">
                 <div class="row mr-2">
                     <div class="col-md-6">
                         <span class="display--2">
-                         <span class="display-2--overviewtext">List Name </span>
+                          <span class="display-2--overviewtext">List Name </span>
                         </span>
                     </div>
                     <div class="col-md-6 text-end">
                         <div class="newlistbtn">
                             <button type="button" class="btn-newlist" (click)="openModal()">
-                            <span> Create new list </span>
-                           </button>
+                              <span> Create new list </span>
+                          </button>
                         </div>
                     </div>
                 </div>
@@ -52,33 +52,31 @@
                                 <div class="accordion-header" [attr.id]="'heading' + i">
                                     <h2 class="accordion-header" id="flush-headingOne">
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
-                                            aria-expanded="false" [attr.aria-controls]="'collapseItem' + i"> {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
-                                             <a class="nav-button" type="button">{{ lengthOflist[i] }}</a>
-                                       </button>
+                                            aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
+                                          {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
+                                          <a class="nav-button" type="button">{{ lengthOflist[i] }}</a>
+                                      </button>
                                     </h2>
                                 </div>
 
                                 <div [attr.id]="'collapseItem' + i" id="flush-collapseOne" class="accordion-collapse collapse border border-2 rounded" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
                                     <div class="card-body">
                                         <div class="table__data p-4 mb-2 rounded text-start">
-                                            <div *ngFor="let item of taskData||listData">
-                                                <section class="task-section" *ngIf="itemList.ListName == item.ListName; else elseBlock">
+                                            <div *ngFor="let item of taskData || listData">
+                                                <section class="task-section" *ngIf="itemList.ListName === item.ListName">
                                                     <mat-checkbox class="example-margin" (click)="taskSelected(item)">
-                                                        <span class="display-2--tasktext">{{item.TaskName }}</span>
+                                                        <span class="display-2--tasktext">{{ item.TaskName }}</span>
                                                     </mat-checkbox>
-                                                    <span class="display-2--tasksubtitletext fw-light text-center">
-                                                  {{ item.Priority }}
-                                                </span>
+                                                    <span class="display-2--tasksubtitletext fw-light text-center" [ngClass]="{
+                                                      high: item.Priority === 'High', medium: item.Priority === 'Medium', low: item.Priority === 'Low'}">
+                                                      {{ item.Priority }}
+                                                  </span>
                                                     <button type="button" class="priority ml-5">
-                                                   <span> {{ item.Date | date: "dd MMMM hh:mm aa" }}</span>
-                                                </button>
+                                                      <span> {{ item.Date | date: "dd MMMM hh:mm aa" }}</span>
+                                                  </button>
                                                     <mat-divider class="mt-2"></mat-divider>
                                                 </section>
-                                                <ng-template #elseBlock>
-                                                    <a href="#" style="display: none;">A</a>
-                                                </ng-template>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
