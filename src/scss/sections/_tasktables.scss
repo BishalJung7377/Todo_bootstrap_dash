@@ -1,27 +1,35 @@
 @import "../custom";
 @import "../components/variables";
-
-
-.tasktable{
+.tasktable {
     padding: 1rem 1rem 1rem 1rem;
     display: block;
-
-
-    .task-tables{
+    .task-tables {
         position: relative;
         padding: 0rem 0 0 0;
-
-        &__data{
+        &__data {
             padding: 1rem;
             margin-top: 0;
         }
     }
-    .list-tables{
+    .list-tables {
         margin: 0em 0em 0em 0em;
         padding: 0em 10em 0em 7em;
     }
 }
-.panel, .panel-group .panel-heading+.panel-collapse>.panel-body{
+
+.panel,
+.panel-group .panel-heading+.panel-collapse>.panel-body {
     border: none;
 }
 
+.high {
+    color: #EB5757;
+}
+
+.medium {
+    color: #219653;
+}
+
+.low {
+    color: #F2994A;
+}

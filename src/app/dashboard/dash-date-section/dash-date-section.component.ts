@@ -32,7 +32,7 @@ export class DashDateSectionComponent implements OnInit {
   // open modal function
   openModal(): void {
     this.modalRef = this.modalService.open(AddNewTaskComponent, {
-      modalClass: 'modal-dialog-centered modal-xl', 
-    }, );
+      modalClass: 'modal-dialog-centered modal-xl',
+    });
   }
 }

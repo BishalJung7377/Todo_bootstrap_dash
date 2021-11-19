@@ -6,6 +6,8 @@ import { TaskService } from 'src/app/services/task-services/task_service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ListService } from 'src/app/services/list-services/list_service';
+import { list } from 'src/app/services/user';
 
 @Component({
   selector: 'app-add-new-task',
@@ -17,17 +19,23 @@ export class AddNewTaskComponent implements OnInit {
   formSubmit = false;
   startDate = new Date(2010, 0, 1);
   endDate = new Date(2020, 6, 16, 0, 0, 0, 0);
-
+  panelOpenState = false;
+  collapse: boolean = true;
+  listData: list[] = [];
   constructor(
     public modalRef: MdbModalRef<AddNewTaskComponent>,
     private formBuilder: FormBuilder,
     private taskAuth: TaskService,
     private toastr: ToastrService,
     private router: Router,
-    public location: Location
+    public location: Location,
+    private listaDataname: ListService,
+    private modalAuth: ListService,
+
   ) {}
   ngOnInit(): void {
     this.initialize();
+    this.getLists();
   }
   initialize(): void {
     this.addnewTaskform = this.formBuilder.group({
@@ -59,13 +67,34 @@ export class AddNewTaskComponent implements OnInit {
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {
-        timeOut: 500,
       });
     }
   }
   showToast(): void {
     this.toastr.success('Task Added Successfully', 'Task Added', {
-      timeOut: 500,
     });
+  }
+  getLists() {
+     this.listaDataname.displayList().subscribe((response: any) => {
+      this.listData = response;
+      console.log("ASdasdsadsad" + this.listData);
+      
+    });
+  }
+  taskSubmit(): void {
+    if (this.addnewTaskform.valid) {
+      this.modalAuth
+        .createList( this.addnewTaskform.value.listName,)
+        .subscribe((response) => {
+          this.router
+            .navigateByUrl('', { skipLocationChange: true })
+            .then(() => {
+              this.router.navigate([decodeURI(this.location.path())]);
+            });
+        });
+    } else {
+      this.toastr.success('Error while adding data', 'Error', {
+      });
+    }
   }
 }

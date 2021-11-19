@@ -25,7 +25,13 @@ export class TaskTablesComponent implements OnInit {
   listCounter: number = 0;
   taskData: task[] = [];
   dataRefresher: any;
-  taskCounter: number =0;
+  lengthOflist: number | any = [];
+  task: any;
+  taskCounter: number = 0;
+  tasks: any;
+  lists: any;
+  counter: number = 0;
+  totalValue: number = 0;
   constructor(
     private formBuilder: FormBuilder,
     config: NgbModalConfig,
@@ -36,19 +42,11 @@ export class TaskTablesComponent implements OnInit {
     private showTaskauth: TaskService,
     private router: Router,
     public location: Location,
-    private toastr: ToastrService,
-
-  ) {
-    this.listaDataname.displayList().subscribe((response: any) => {
-      this.listData = response;
-      this.listCounter = this.listData.length;
-    });
-    this.showTaskauth.showTask().subscribe((response: any) => {
-      this.taskData = response;
-      this.taskCounter = this.taskData.length;
-    });
+    private toastr: ToastrService
+  ) {}
+  ngOnInit(): void {
+    this.getapiData();
   }
-  ngOnInit(): void {}
   open(content: string): void {
     this.modal.open(content, {
       centered: true,
@@ -56,25 +54,40 @@ export class TaskTablesComponent implements OnInit {
       size: 'lg',
     });
   }
-
+  getapiData() {
+    this.listaDataname.displayList().subscribe((response: any) => {
+      this.listData = response;
+      this.listCounter = this.listData.length;
+      this.showTaskauth.showTask().subscribe((response: any) => {
+        this.taskData = response;
+        this.taskCounter = this.taskData.length;
+        for (let list of this.taskData) {
+          this.totalValue = 0;
+          for (let task of this.listData) {
+            this.counter = 0;
+            if (list.ListName == task.ListName) {
+              this.counter++;
+            }
+            this.totalValue = this.totalValue + this.counter;
+          }
+          this.lengthOflist.push(this.totalValue);
+        }
+      });
+    });
+  }
   // open modal for new list
   openModal(): void {
     this.modalRef = this.modalService.open(AddTaskComponent, {
       modalClass: 'modal-dialog-centered',
     });
   }
-  taskSelected(tasksList: any){
+  taskSelected(tasksList: any) {
     tasksList.status = true;
-    this.showTaskauth.completedTask(tasksList).subscribe(status =>{
-      this.toastr.warning('Deleted Successfully', 'Delet', {
-        timeOut: 500,
+    this.showTaskauth.completedTask(tasksList).subscribe((status) => {
+      this.toastr.success('Task Deleted Successfully', 'Delete', {});
+      this.router.navigateByUrl('', { skipLocationChange: true }).then(() => {
+        this.router.navigate([decodeURI(this.location.path())]);
       });
-      this.router
-            .navigateByUrl('', { skipLocationChange: true })
-            .then(() => {
-              this.router.navigate([decodeURI(this.location.path())]);
-            });
-    })
-   
+    });
   }
 }

@@ -39,13 +39,11 @@ export class AddTaskComponent implements OnInit {
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {
-        timeOut: 500,
       });
     }
   }
   showToast(): void {
     this.toastr.success('List added successfully', 'Added', {
-      timeOut: 500,
     });
   }
 }
