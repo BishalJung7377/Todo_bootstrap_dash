@@ -74,22 +74,21 @@ export class AddNewTaskComponent implements OnInit {
   getLists() {
     this.listaDataname.displayList().subscribe((response: any) => {
       this.listData = response;
-      console.log('ASdasdsadsad' + this.listData);
     });
   }
   taskSubmit(): void {
-    // if (this.addnewTaskform.valid) {
-    //   this.modalAuth
-    //     .createList(this.addnewTaskform.value.listName)
-    //     .subscribe((response) => {
-    //       this.router
-    //         .navigateByUrl('', { skipLocationChange: true })
-    //         .then(() => {
-    //           this.router.navigate([decodeURI(this.location.path())]);
-    //         });
-    //     });
-    // } else {
-    //   this.toastr.success('Error while adding data', 'Error', {});
-    // }
+    if (this.addnewTaskform.valid) {
+      this.modalAuth
+        .createList(this.addnewTaskform.value.listName)
+        .subscribe((response) => {
+          this.router
+            .navigateByUrl('', { skipLocationChange: true })
+            .then(() => {
+              this.router.navigate([decodeURI(this.location.path())]);
+            });
+        });
+    } else {
+      this.toastr.success('Error while adding data', 'Error', {});
+    }
   }
 }
