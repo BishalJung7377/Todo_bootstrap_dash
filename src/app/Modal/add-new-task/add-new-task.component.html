@@ -18,13 +18,17 @@
           <div class="row">
             <div class="col">
               <label for="formGroupExampleInput">Choose List Name</label>
-              <select class="custom-select" formControlName="listName" >
+              <select class="custom-select" formControlName="listName">
                 <option value="" disabled selected>Choose List Name</option>
                 <option value="Personal">Personal</option>
                 <option value="Work">Work</option>
                 <option value="College Work">College Work</option>
-                <option *ngFor="let list of listData"  [value]="list.ListName" ng-if="checkIfExist()">
-                   {{list.ListName}}
+                <option
+                  *ngFor="let list of listData"
+                  [value]="list.ListName"
+                  ng-if="checkIfExist()"
+                >
+                  {{ list.ListName }}
                 </option>
               </select>
             </div>
@@ -64,7 +68,7 @@
       <button
         type="button"
         (click)="onSubmit()"
-        (click)=" taskSubmit()"
+        (click)="taskSubmit()"
         class="btn btn-danger"
         (click)="modalRef.close('Ok click')"
         [disabled]="!addnewTaskform.valid"

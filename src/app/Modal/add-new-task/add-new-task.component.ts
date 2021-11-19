@@ -30,8 +30,7 @@ export class AddNewTaskComponent implements OnInit {
     private router: Router,
     public location: Location,
     private listaDataname: ListService,
-    private modalAuth: ListService,
-
+    private modalAuth: ListService
   ) {}
   ngOnInit(): void {
     this.initialize();
@@ -66,35 +65,31 @@ export class AddNewTaskComponent implements OnInit {
             });
         });
     } else {
-      this.toastr.success('Error while adding data', 'Error', {
-      });
+      this.toastr.success('Error while adding data', 'Error', {});
     }
   }
   showToast(): void {
-    this.toastr.success('Task Added Successfully', 'Task Added', {
-    });
+    this.toastr.success('Task Added Successfully', 'Task Added', {});
   }
   getLists() {
-     this.listaDataname.displayList().subscribe((response: any) => {
+    this.listaDataname.displayList().subscribe((response: any) => {
       this.listData = response;
-      console.log("ASdasdsadsad" + this.listData);
-      
+      console.log('ASdasdsadsad' + this.listData);
     });
   }
   taskSubmit(): void {
-    if (this.addnewTaskform.valid) {
-      this.modalAuth
-        .createList( this.addnewTaskform.value.listName,)
-        .subscribe((response) => {
-          this.router
-            .navigateByUrl('', { skipLocationChange: true })
-            .then(() => {
-              this.router.navigate([decodeURI(this.location.path())]);
-            });
-        });
-    } else {
-      this.toastr.success('Error while adding data', 'Error', {
-      });
-    }
+    // if (this.addnewTaskform.valid) {
+    //   this.modalAuth
+    //     .createList(this.addnewTaskform.value.listName)
+    //     .subscribe((response) => {
+    //       this.router
+    //         .navigateByUrl('', { skipLocationChange: true })
+    //         .then(() => {
+    //           this.router.navigate([decodeURI(this.location.path())]);
+    //         });
+    //     });
+    // } else {
+    //   this.toastr.success('Error while adding data', 'Error', {});
+    // }
   }
 }

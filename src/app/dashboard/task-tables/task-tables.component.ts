@@ -28,8 +28,6 @@ export class TaskTablesComponent implements OnInit {
   lengthOflist: number | any = [];
   task: any;
   taskCounter: number = 0;
-  tasks: any;
-  lists: any;
   counter: number = 0;
   totalValue: number = 0;
   constructor(
