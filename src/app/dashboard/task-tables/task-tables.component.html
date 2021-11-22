@@ -62,23 +62,26 @@
                                 <div [attr.id]="'collapseItem' + i" id="flush-collapseOne" class="accordion-collapse collapse border border-2 rounded" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
                                     <div class="card-body">
                                         <div class="table__data p-4 mb-2 rounded text-start">
-                                            <div *ngFor="let item of taskData || listData">
-                                                <section class="task-section" *ngIf="itemList.ListName == item.ListName">
-                                                    <mat-checkbox class="example-margin" (click)="taskSelected(item)">
-                                                        <span class="display-2--tasktext">{{ item.TaskName }}</span>
+                                            <div *ngFor="let item of taskData || listData;">
+                                                <section class="task-section" *ngIf="itemList.ListName === item.ListName; else emptyData">
+                                                    <mat-checkbox class=" example-margin " (click)="taskSelected(item) ">
+                                                        <span class="display-2--tasktext ">{{ item.TaskName }}</span>
                                                     </mat-checkbox>
-                                                    <span class="display-2--tasksubtitletext fw-light text-center" [ngClass]="{
-                                                      high: item.Priority === 'High', medium: item.Priority === 'Medium', low: item.Priority === 'Low'}">
+                                                    <span class="display-2--tasksubtitletext fw-light text-center " [ngClass]="{ high: item.Priority==='High' , medium: item.Priority==='Medium' , low: item.Priority==='Low' } ">
                                                       {{ item.Priority }}
                                                   </span>
-                                                    <button type="button" class="priority ml-5">
-                                                      <span> {{ item.Date | date: "dd MMMM hh:mm aa" }}</span>
+                                                    <button type="button " class="priority ml-5 ">
+                                                      <span> {{ item.Date | date: "dd MMMM hh:mm aa " }}</span>
                                                   </button>
-                                                    <mat-divider class="mt-2"></mat-divider>
+                                                    <mat-divider class="mt-2 "></mat-divider>
                                                 </section>
                                             </div>
+
                                         </div>
                                     </div>
+                                    <ng-template #emptyData>
+                                        <h4>No data available</h4>
+                                    </ng-template>
                                 </div>
                             </div>
                         </div>
