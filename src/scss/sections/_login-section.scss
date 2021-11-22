@@ -1,219 +1,237 @@
 @import "../custom";
 @import "../components/variables";
-
 .login-section {
-  margin: 10em auto;
+    margin: 10em auto;
 }
+
 .title {
-  text-align: $leftAlign;
-  font-weight: bold;
-  margin: $Auto;
-  color: #800000;
-  font-weight: bolder;
+    text-align: $leftAlign;
+    font-weight: bold;
+    margin: $Auto;
+    color: #800000;
+    font-weight: bolder;
 }
 
 .subtitle {
-  text-align: $leftAlign;
-  font: weight $texPixel;
+    text-align: $leftAlign;
+    font: weight $texPixel;
 }
 
 .btn-round {
-  background-color: $background-Color;
-  color: $primaryColor;
-  padding: 18px $twentyPx;
-  margin-top: $texPixel;
-  margin-bottom: $twentyPx;
-  width: $widthOnehundred;
-  border-radius: $texPixel;
-  border: none;
+    background-color: $background-Color;
+    color: $primaryColor;
+    padding: 18px $twentyPx;
+    margin-top: $texPixel;
+    margin-bottom: $twentyPx;
+    width: $widthOnehundred;
+    border-radius: $texPixel;
+    border: none;
 }
 
 .icon {
-  margin-top: $texPixel;
+    margin-top: $texPixel;
 }
 
 .creataccc {
-  text-align: center;
+    text-align: center;
 }
+
 .create-acc {
-  text-align: center;
-  color: #800000;
+    text-align: center;
+    color: #800000;
 }
+
 .subtitle {
-  text-align: $leftAlign;
-  font: weight $texPixel;
+    text-align: $leftAlign;
+    font: weight $texPixel;
 }
+
 .cta-btn {
-  background-color: $background-Color;
-  color: $primaryColor;
-  padding: 18px $twentyPx;
-  margin-top: $texPixel;
-  margin-bottom: $twentyPx;
-  width: $widthOnehundred;
-  border-radius: $texPixel;
-  border: $bordernon;
+    background-color: $background-Color;
+    color: $primaryColor;
+    padding: 18px $twentyPx;
+    margin-top: $texPixel;
+    margin-bottom: $twentyPx;
+    width: $widthOnehundred;
+    border-radius: $texPixel;
+    border: $bordernon;
 }
+
 .forget-pass {
-  text-align: right;
-  color: #800000;
+    text-align: right;
+    color: #800000;
 }
 
 .email-login {
-  display: $flexDispay;
-  flex-direction: column;
-  width: $fourHundPixel;
+    display: $flexDispay;
+    flex-direction: column;
+    width: $fourHundPixel;
 }
+
 .email-login label {
-  color: rgb(170 166 166);
+    color: rgb(170 166 166);
 }
 
 input[type="text"],
 input[type="password"] {
-  padding: $fiftenPxx $twentyPx;
-  margin-top: $eightPixel;
-  margin-bottom: $fiftenPxx;
-  border: 1px solid #ccc;
-  border-radius: $eightPixel;
-  box-sizing: border-box;
-  width: $three-nine-fife-Pixel;
+    padding: $fiftenPxx $twentyPx;
+    margin-top: $eightPixel;
+    margin-bottom: $fiftenPxx;
+    border: 1px solid #ccc;
+    border-radius: $eightPixel;
+    box-sizing: border-box;
+    width: $three-nine-fife-Pixel;
 }
 
 .iconsinput input[type="text"],
 input[type="password"] {
-  padding-left: $fortyPixel;
-  border-radius: 6px;
+    padding-left: $fortyPixel;
+    border-radius: 6px;
 }
+
 .iconsinput input[type="alphanumeric"] {
-  padding-left: $texPixel;
+    padding-left: $texPixel;
 }
+
 .iconsinput {
-  position: $positionRelative;
+    position: $positionRelative;
 }
+
 .iconsinput i {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  top: 9px $eightPixel;
-  transition: $transition;
-  margin-top: $marign28;
-  margin-left: $twentyPx;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    top: 9px $eightPixel;
+    transition: $transition;
+    margin-top: $marign28;
+    margin-left: $twentyPx;
 }
-.iconsinput input[type="text"]:focus + i {
-  color: $background-Color;
+
+.iconsinput input[type="text"]:focus+i {
+    color: $background-Color;
 }
-.iconsinput input[type="password"]:focus + i {
-  color: $background-Color;
+
+.iconsinput input[type="password"]:focus+i {
+    color: $background-Color;
 }
+
 .phNumber {
-  margin-left: $margin120;
-  margin-top: $seventyneg;
+    margin-left: $margin120;
+    margin-top: $seventyneg;
 }
+
 .phoneIcon {
-  margin-left: $texPixel;
-  margin-top: $fiftyneg;
+    margin-left: $texPixel;
+    margin-top: $fiftyneg;
 }
+
 .fa-phone-alt {
-  color: black;
+    color: black;
 }
+
 .mateye {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: #aaa;
-  transition: $transition;
-  margin-top: -53px;
-  margin-left: 360px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: #aaa;
+    transition: $transition;
+    margin-top: -53px;
+    margin-left: 360px;
 }
+
 .tick {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: $noerrColor;
-  transition: $transition;
-  margin-top: $seventyneg;
-  margin-left: $three50px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: $noerrColor;
+    transition: $transition;
+    margin-top: $seventyneg;
+    margin-left: $three50px;
 }
+
 .tickclose {
-  position: $positionAbsolute;
-  left: $zeroValue;
-  color: $errorColor;
-  transition: $transition;
-  margin-top: $seventyneg;
-  margin-left: $three50px;
+    position: $positionAbsolute;
+    left: $zeroValue;
+    color: $errorColor;
+    transition: $transition;
+    margin-top: $seventyneg;
+    margin-left: $three50px;
 }
 
 .emailerror {
-  color: $errorColor;
+    color: $errorColor;
 }
+
 .passworderror {
-  color: $errorColor;
+    color: $errorColor;
 }
+
 .mat-radio-button {
-  margin-left: $twentyPx;
+    margin-left: $twentyPx;
 }
+
 .invalid-feedback {
-  display: block;
+    display: block;
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: $background-Color !important; /*inner circle color change*/
+    background-color: $background-Color !important;
+    /*inner circle color change*/
 }
 
-::ng-deep.mat-radio-button.mat-accent.mat-radio-checked
-  .mat-radio-outer-circle {
-  border-color: $background-Color !important; /*outer ring color change*/
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: $background-Color !important;
+    /*outer ring color change*/
 }
+
 .btn-outline-secondary .calendar {
-  margin-top: $texPixel;
+    margin-top: $texPixel;
 }
 
 @media screen and(max-width:700px) {
-  input[type="text"] {
-    padding: 15px 20px;
+    input[type="text"] {
+        padding: 15px 20px;
         margin-top: 8px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
         border-radius: 8px;
         box-sizing: border-box;
         width: 100% !important;
-      
-
-  }
-  
-  input[type="password"] {
-    padding: 15px 20px;
+    }
+    input[type="password"] {
+        padding: 15px 20px;
         margin-top: 8px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
         border-radius: 8px;
         box-sizing: border-box;
         width: 80% !important;
-        
-
-  }
-  .forget-pass {
-    text-align: center;
-  }
-
-  .mateye {
-    position: $positionAbsolute;
-    left: $zeroValue;
-    color: #aaa;
-    transition: $transition;
-    margin-top: -53px;
-    margin-left: 265px;
-  }
-  .tick {
-    position: $positionAbsolute;
-    left: $zeroValue;
-    color: $noerrColor;
-    transition: $transition;
-    margin-top: $seventyneg;
-    margin-left: 260px  !important;
-  }
-  .tickclose {
-    position: $positionAbsolute;
-    left: $zeroValue;
-    color: $errorColor;
-    transition: $transition;
-    margin-top: $seventyneg;
-    margin-left: 260px  !important;
-  }
+    }
+    .forget-pass {
+        text-align: center;
+    }
+    .mateye {
+        position: $positionAbsolute;
+        left: $zeroValue;
+        color: #aaa;
+        transition: $transition;
+        margin-top: -53px;
+        margin-left: 265px;
+    }
+    .tick {
+        position: $positionAbsolute;
+        left: $zeroValue;
+        color: $noerrColor;
+        transition: $transition;
+        margin-top: $seventyneg;
+        margin-left: 260px !important;
+    }
+    .tickclose {
+        position: $positionAbsolute;
+        left: $zeroValue;
+        color: $errorColor;
+        transition: $transition;
+        margin-top: $seventyneg;
+        margin-left: 260px !important;
+    }
+    .img-holder {
+        display: none;
+    }
 }

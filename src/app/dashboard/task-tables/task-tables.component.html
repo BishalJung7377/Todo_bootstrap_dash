@@ -9,7 +9,7 @@
                   Today's Task
                   <a class="nav-button" type="button">{{ taskCounter }}</a>
               </span>
-                <div class="table__data p-4 mb-2 border border-2 rounded text-start">
+                <div class="table__data p-4 mb-2 border border-2 rounded text-start" *ngIf="taskData.length  >0; else emptyTask">
                     <section class="task-section" *ngFor="let items of taskData">
                         <mat-checkbox class="example-margin" (click)="taskSelected(items)">
                             <span class="display-2--tasktext">{{ items.TaskName }}</span>
@@ -26,6 +26,12 @@
                         <mat-divider class="mt-4"></mat-divider>
                     </section>
                 </div>
+                <ng-template #emptyTask>
+                    <section class="task-section">
+                        <p>Empty Task</p>
+                    </section>
+                </ng-template>
+
             </div>
             <!-- listname  -->
             <div class="col-lg-2 col-md-2"></div>
@@ -46,17 +52,24 @@
                 </div>
 
                 <div class="table__data p-4 mb-2 border border-2 rounded p-2 mb-2 text-start">
-                    <section class="list-section">
+                    <section class="list-section" *ngIf="listData.length >0; else emptyData ">
                         <div id="accordion" class="accordion accordion-flush">
                             <div class="accordion-item" *ngFor="let itemList of listData; let i = index">
                                 <div class="accordion-header" [attr.id]="'heading' + i">
-                                    <h2 class="accordion-header" id="flush-headingOne">
+                                    <h2 class="accordion-header" id="flush-headingOne" *ngIf="lengthOflist >0; else emptyDataLegth">
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
                                             aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
                                           {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
                                           <a class="nav-button" type="button">{{ lengthOflist[i] }}</a>
                                       </button>
                                     </h2>
+                                    <ng-template #emptyDataLegth>
+                                        <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
+                                            aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
+                                              {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
+                                              <a class="nav-button" type="button">0</a>
+                                          </button>
+                                    </ng-template>
                                 </div>
 
                                 <div [attr.id]="'collapseItem' + i" id="flush-collapseOne" class="accordion-collapse collapse border border-2 rounded" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
@@ -86,6 +99,15 @@
                             </div>
                         </div>
                     </section>
+
+                    <ng-template #emptyData>
+                        <section class="list-section">
+
+                            <p>Empty List </p>
+
+                        </section>
+                    </ng-template>
+
                 </div>
             </div>
         </div>
