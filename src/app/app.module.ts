@@ -42,7 +42,7 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {ToastrModule} from "ngx-toastr";
 @NgModule({
   declarations: [
@@ -95,6 +95,7 @@ import {ToastrModule} from "ngx-toastr";
     NgxMatNativeDateModule,
     NgxMatTimepickerModule,
     MdbModalModule,
+    MatProgressBarModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ListService } from 'src/app/services/list-services/list_service';
 import { list } from 'src/app/services/user';
+import { LoaderService } from 'src/app/services/loader/loader.service';
 
 @Component({
   selector: 'app-add-new-task',
@@ -30,7 +31,8 @@ export class AddNewTaskComponent implements OnInit {
     private router: Router,
     public location: Location,
     private listaDataname: ListService,
-    private modalAuth: ListService
+    private modalAuth: ListService,
+    public loaderService: LoaderService
   ) {}
   ngOnInit(): void {
     this.initialize();
@@ -61,15 +63,13 @@ export class AddNewTaskComponent implements OnInit {
           this.router
             .navigateByUrl('', { skipLocationChange: true })
             .then(() => {
+              this.toastr.success('Task Added Successfully', 'Task Added', {});
               this.router.navigate([decodeURI(this.location.path())]);
             });
         });
     } else {
       this.toastr.success('Error while adding data', 'Error', {});
     }
-  }
-  showToast(): void {
-    this.toastr.success('Task Added Successfully', 'Task Added', {});
   }
   getLists() {
     this.listaDataname.displayList().subscribe((response: any) => {
