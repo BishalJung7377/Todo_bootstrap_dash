@@ -1,7 +1,7 @@
 <section class="addtaskmodal">
     <div class="container">
         <div class="modal-header">
-            <h2 class="modal-title" id="modal-title">Create New Task</h2>
+            <h2 class="modal-title" id="modal-title">New Task</h2>
             <button type="button" class="close" aria-describedby="modal-title" (click)="modalRef.close('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -9,8 +9,8 @@
         <div class="row">
             <form [formGroup]="addnewTaskform" #taskform="ngForm" (onSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label for="createlIst">Create New Task</label>
-                    <input type="text" class="form-control form-control-lg" formControlName="taskName" name="taskName" size="40" placeholder="Task Name Here" />
+                    <label for="createlIst">Task Name</label>
+                    <input type="text" class="form-control form-control-lg" formControlName="taskName" name="taskName" size="40" placeholder="Enter Task Name Here" />
                     <span class="tasknameerror text-start justify-content-start" *ngIf="
               formValidation.taskName.invalid && formValidation.taskName.touched
             ">Task name required</span

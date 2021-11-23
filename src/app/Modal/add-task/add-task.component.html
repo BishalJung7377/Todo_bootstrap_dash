@@ -3,11 +3,11 @@
     <i class="fas fa-times" (click)="modalRef.close()"> </i>
 </div>
 <div class="modal-body">
-    <div class="wrapper d-flex justify-content-between">
+    <div class="wrapper text-start justify-content-start">
         <form [formGroup]="newListtask" #newlistform="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="createlIst">Create New List</label>
-                <input type="text" class="form-control form-control-lg" formControlName="ListName" name="ListName" size="40" placeholder="Create New List Here" />
+                <label for="createlIst" class="text-start justify-content-start">List Name</label>
+                <input type="text" class="form-control form-control-lg" formControlName="ListName" name="ListName" size="40" placeholder="Enter List Name" />
             </div>
         </form>
     </div>
@@ -17,6 +17,6 @@
     Close
   </button>
     <button [disabled]="!newListtask.valid" class="btn btn-primary" (click)="onSubmit()" (click)="showToast()" (click)="modalRef.close('Ok click')">
-    Add Task
+    Add List
   </button>
 </div>

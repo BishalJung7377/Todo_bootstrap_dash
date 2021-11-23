@@ -53,17 +53,17 @@ export class TaskTablesComponent implements OnInit {
     });
   }
   getapiData() {
-    this.listaDataname.displayList().subscribe((response: any) => {
-      this.listData = response;
-      this.listCounter = this.listData.length;
-      this.showTaskauth.showTask().subscribe((response: any) => {
-        this.taskData = response;
-        this.taskCounter = this.taskData.length;
-        for (let list of this.taskData) {
+    this.showTaskauth.showTask().subscribe((response: any) => {
+      this.taskData = response;
+      this.taskCounter = this.taskData.length;
+      this.listaDataname.displayList().subscribe((response: any) => {
+        this.listData = response;
+        this.listCounter = this.listData.length;
+        for (let list of this.listData) {
           this.totalValue = 0;
-          for (let task of this.listData) {
+          for (let task of this.taskData) {
             this.counter = 0;
-            if (list.ListName == task.ListName) {
+            if (list.ListName === task.ListName) {
               this.counter++;
             }
             this.totalValue = this.totalValue + this.counter;

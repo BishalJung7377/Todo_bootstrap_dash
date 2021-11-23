@@ -9,7 +9,7 @@
                   Today's Task
                   <a class="nav-button" type="button">{{ taskCounter }}</a>
               </span>
-                <div class="table__data p-4 mb-2 border border-2 rounded text-start" *ngIf="taskData.length  >0; else emptyTask">
+                <div class="table__data p-4 mb-2 border border-2 rounded text-start" *ngIf="taskData.length >0; else emptyTask">
                     <section class="task-section" *ngFor="let items of taskData">
                         <mat-checkbox class="example-margin" (click)="taskSelected(items)">
                             <span class="display-2--tasktext">{{ items.TaskName }}</span>
@@ -27,15 +27,15 @@
                     </section>
                 </div>
                 <ng-template #emptyTask>
-                    <section class="task-section">
-                        <p>Empty Task</p>
-                    </section>
+                    <div class="table__data p-4 mb-2 border border-2 rounded text-start">
+                        <p>Empty Task Items</p>
+                    </div>
                 </ng-template>
 
             </div>
             <!-- listname  -->
-            <div class="col-lg-2 col-md-2"></div>
-            <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 list-tables rounded p-2 m-auto">
+            <div class="col-lg-1 col-md-2"></div>
+            <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 list-tables rounded p-2 m-auto">
                 <div class="row mr-2">
                     <div class="col-md-6">
                         <span class="display--2">
@@ -52,15 +52,16 @@
                 </div>
 
                 <div class="table__data p-4 mb-2 border border-2 rounded p-2 mb-2 text-start">
-                    <section class="list-section" *ngIf="listData.length >0; else emptyData ">
+                    <section class="list-section" *ngIf="listData.length >0; else emptyListData ">
                         <div id="accordion" class="accordion accordion-flush">
-                            <div class="accordion-item" *ngFor="let itemList of listData; let i = index">
+                            <div class="accordion-item" *ngFor="let itemList of listData;let i = index">
                                 <div class="accordion-header" [attr.id]="'heading' + i">
-                                    <h2 class="accordion-header" id="flush-headingOne" *ngIf="lengthOflist >0; else emptyDataLegth">
+                                    <h2 class="accordion-header" id="flush-headingOne" *ngIf="lengthOflist[i] > 0; else emptyDataLegth">
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
                                             aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
                                           {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
                                           <a class="nav-button" type="button">{{ lengthOflist[i] }}</a>
+
                                       </button>
                                     </h2>
                                     <ng-template #emptyDataLegth>
@@ -74,17 +75,18 @@
 
                                 <div [attr.id]="'collapseItem' + i" id="flush-collapseOne" class="accordion-collapse collapse border border-2 rounded" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
                                     <div class="card-body">
-                                        <div class="table__data p-4 mb-2 rounded text-start">
-                                            <div *ngFor="let item of taskData || listData;">
-                                                <section class="task-section" *ngIf="itemList.ListName === item.ListName; else emptyData">
+                                        <div class="tabledata p-4 mb-2 rounded text-start" *ngIf="lengthOflist[i] > 0; else emptyData">
+                                            <div *ngFor="let item of taskData || listData">
+                                                <section class="task-section" *ngIf="itemList.ListName === item.ListName;">
                                                     <mat-checkbox class=" example-margin " (click)="taskSelected(item) ">
-                                                        <span class="display-2--tasktext ">{{ item.TaskName }}</span>
+                                                        <span class="display-2--tasktext ">{{ item.TaskName }}
+                                                        </span>
                                                     </mat-checkbox>
                                                     <span class="display-2--tasksubtitletext fw-light text-center " [ngClass]="{ high: item.Priority==='High' , medium: item.Priority==='Medium' , low: item.Priority==='Low' } ">
                                                       {{ item.Priority }}
                                                   </span>
                                                     <button type="button " class="priority ml-5 ">
-                                                      <span> {{ item.Date | date: "dd MMMM hh:mm aa " }}</span>
+                                                      <span> {{ item.Date | date: "dd MMMM" }}</span>
                                                   </button>
                                                     <mat-divider class="mt-2 "></mat-divider>
                                                 </section>
@@ -93,17 +95,17 @@
                                         </div>
                                     </div>
                                     <ng-template #emptyData>
-                                        <h5>No Data Available</h5>
+                                        <h4>No Data Available</h4>
                                     </ng-template>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <ng-template #emptyData>
+                    <ng-template #emptyListData>
                         <section class="list-section">
 
-                            <p>Empty List </p>
+                            <p>Empty List Items</p>
 
                         </section>
                     </ng-template>
