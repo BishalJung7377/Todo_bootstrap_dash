@@ -58,7 +58,7 @@
                         <div id="accordion" class="accordion accordion-flush">
                             <div class="accordion-item" *ngFor="let itemList of listData;let i = index">
                                 <div class="accordion-header" [attr.id]="'heading' + i">
-                                    <h2 class="accordion-header" id="flush-headingOne" *ngIf="lengthOflist >= 0; else emptyDataLegth">
+                                    <h2 class="accordion-header" id="flush-headingOne" *ngIf="lengthOflist[i] > 0; else emptyDataLegth">
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
                                             aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
                                           {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
