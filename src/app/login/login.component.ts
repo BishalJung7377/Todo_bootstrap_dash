@@ -2,6 +2,13 @@ import { APIServiceService } from '../services/api_service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+import { LoaderService } from '../services/loader/loader.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,10 +32,15 @@ export class LoginComponent implements OnInit {
   password!: string;
   submitted = false;
   valid = false;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   constructor(
     public loginAuth: APIServiceService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
+    public loaderService: LoaderService,
+    private snackBar: MatSnackBar
   ) {}
   ngOnInit(): void {
     this.initialize();
@@ -47,21 +59,29 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
+
   // login data submit
   onSubmit(): void {
-    this.loginAuth
-      .userLogin(
-        this.loginForm.get('email')?.value,
-        this.loginForm.get('password')?.value
-      )
-      .subscribe((response) => {
-        this.loginAuthResp = response;
-        if (response.token) {
-          localStorage.setItem('token', response.token);
+    this.loginAuth.login().subscribe((response) => {
+      this.loginAuthResp = response;
+      for (let users of this.loginAuthResp) {
+        if (
+          this.loginForm.get('email')?.value == users.email &&
+          this.loginForm.get('password')?.value == users.password
+        ) {
+          localStorage.setItem('token', JSON.stringify(users));
           this.router.navigate(['/dashboard']);
+          this.snackBar.open('Log in Successful', 'Success', {
+            duration: 1000,
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+          });
+        } else {
         }
-      });
+      }
+    });
   }
+
   get loginFormcontroller() {
     return this.loginForm.controls;
   }

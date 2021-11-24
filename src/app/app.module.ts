@@ -44,6 +44,7 @@ import {
 } from '@angular-material-components/datetime-picker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {ToastrModule} from "ngx-toastr";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +97,7 @@ import {ToastrModule} from "ngx-toastr";
     NgxMatTimepickerModule,
     MdbModalModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       progressBar: true,
