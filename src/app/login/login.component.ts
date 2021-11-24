@@ -74,9 +74,9 @@ export class LoginComponent implements OnInit {
       if (users) {
         console.log('welcome to dashboard user');
         localStorage.setItem('token', users.name);
-        setTimeout(this.routeDashboard.bind(this), 1000);
+        setTimeout(this.routeDashboard.bind(this));
       } else {
-        setTimeout(this.throwErrorMessage.bind(this), 1000);
+        setTimeout(this.throwErrorMessage.bind(this));
       }
     });
   }
