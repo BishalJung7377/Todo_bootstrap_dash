@@ -9,6 +9,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { LoaderService } from '../services/loader/loader.service';
+import { Users } from '../services/user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -64,22 +65,29 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.loginAuth.login().subscribe((response) => {
       this.loginAuthResp = response;
-      for (let users of this.loginAuthResp) {
-        if (
-          this.loginForm.get('email')?.value == users.email &&
-          this.loginForm.get('password')?.value == users.password
-        ) {
-          localStorage.setItem('token', JSON.stringify(users));
-          this.router.navigate(['/dashboard']);
-          this.snackBar.open('Log in Successful', 'Success', {
-            duration: 1000,
-            horizontalPosition: this.horizontalPosition,
-            verticalPosition: this.verticalPosition,
-          });
-        } else {
-        }
+      const userEmail = this.loginForm.get('email')?.value;
+      const userPassword = this.loginForm.get('password')?.value;
+      const users = response.find((userData: any) => {
+        return userData.email == userEmail && userData.password == userPassword;
+      });
+
+      if (users) {
+        console.log('welcome to dashboard user');
+        localStorage.setItem('token', users.name);
+        setTimeout(this.routeDashboard.bind(this), 1000);
+      } else {
+        setTimeout(this.throwErrorMessage.bind(this), 1000);
       }
     });
+  }
+  routeDashboard() {
+    this.router.navigate(['/dashboard']);
+    this.toastr.success('Logged is Successfull', 'Logged In', {});
+
+  }
+  throwErrorMessage() {
+    this.toastr.warning('Logged is error', 'Error Login', {});
+
   }
 
   get loginFormcontroller() {
