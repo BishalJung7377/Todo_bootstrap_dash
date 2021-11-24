@@ -1,10 +1,10 @@
-<div class="loader-container" *ngIf="loaderService.isLoading | async">
-    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
-    <mat-spinner style="top:50%; left:50%"></mat-spinner>
+<div>
+    <div class="loader" *ngIf="loaderService.isLoading | async">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <app-navbar>
+    </app-navbar>
+    <app-dash-date-section></app-dash-date-section>
+    <app-overview-section></app-overview-section>
+    <app-task-tables></app-task-tables>
 </div>
-<app-navbar>
-
-</app-navbar>
-<app-dash-date-section></app-dash-date-section>
-<app-overview-section></app-overview-section>
-<app-task-tables></app-task-tables>

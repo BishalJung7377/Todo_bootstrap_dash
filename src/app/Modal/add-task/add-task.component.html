@@ -1,22 +1,46 @@
-<div class="modal-header">
-    <h1 class="modal-title" id="ModalLabel">Create List</h1>
-    <i class="fas fa-times" (click)="modalRef.close()"> </i>
-</div>
-<div class="modal-body">
-    <div class="wrapper text-start justify-content-start">
-        <form [formGroup]="newListtask" #newlistform="ngForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="createlIst" class="text-start justify-content-start">List Name</label>
-                <input type="text" class="form-control form-control-lg" formControlName="ListName" name="ListName" size="40" placeholder="Enter List Name" />
-            </div>
-        </form>
+<section class="addlistmodal">
+    <div class="loader-container" *ngIf="loaderService.isLoading | async">
+        <mat-spinner style="top: 50%; left: 50%" color="accent" diameter="50" mode="indeterminate" value="100"></mat-spinner>
     </div>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-secondary-outline" (click)="modalRef.close()">
-    Close
-  </button>
-    <button [disabled]="!newListtask.valid" class="btn btn-primary" (click)="onSubmit()" (click)="modalRef.close('Ok click')">
-    Add List
-  </button>
-</div>
+    <div class="container">
+        <div class="modal-header">
+            <h1 class="modal-title" id="ModalLabel">Create List</h1>
+            <i class="fas fa-times" (click)="modalRef.close()"> </i>
+        </div>
+        <div class="modal-body">
+            <div class="wrapper text-start justify-content-start">
+                <form [formGroup]="newListtask" #newlistform="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="createlIst" class="text-start justify-content-start">List Name</label
+            >
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              formControlName="ListName"
+              name="ListName"
+              size="40"
+              placeholder="Enter List Name"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary-outline"
+        (click)="modalRef.close()"
+      >
+        Close
+      </button>
+      <button
+        [disabled]="!newListtask.valid"
+        class="btn btn-primary"
+        (click)="onSubmit()"
+        (click)="modalRef.close('Ok click')"
+      >
+        Add List
+      </button>
+    </div>
+  </div>
+</section>

@@ -22,7 +22,6 @@ export class AddTaskComponent implements OnInit {
     private router: Router,
     public location: Location,
     public loaderService: LoaderService
-
   ) {
     this.newListtask = this.formBuilder.group({
       ListName: ['', [Validators.required]],
@@ -37,14 +36,12 @@ export class AddTaskComponent implements OnInit {
           this.router
             .navigateByUrl('', { skipLocationChange: true })
             .then(() => {
-              this.toastr.success('List added successfully', 'Added', {
-              });
+              this.toastr.success('List added successfully', 'Added', {});
               this.router.navigate([decodeURI(this.location.path())]);
             });
         });
     } else {
-      this.toastr.success('Error while adding data', 'Error', {
-      });
+      this.toastr.success('Error while adding data', 'Error', {});
     }
   }
 }
