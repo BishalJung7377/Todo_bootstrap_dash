@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
 
   }
   throwErrorMessage() {
-    this.toastr.warning('Logged is error', 'Error Login', {});
+    this.toastr.warning('Unable to log in, Please Check Credentials', 'Error Login', {});
 
   }
 
