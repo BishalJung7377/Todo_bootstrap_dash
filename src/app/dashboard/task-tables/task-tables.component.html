@@ -7,8 +7,10 @@
                 <!-- todays task  -->
                 <span class="display-2--overviewtext">
                   Today's Task
-                  <a class="counter-button text-center" type="button">{{ taskCounter }}</a>
-              </span>
+                  <a class="counter-button">
+                    <span class="wrapp">{{ taskCounter }}</span>
+                </a>
+                </span>
                 <div class="table__data p-4 mb-2 border border-2 rounded text-start" *ngIf="taskData.length >0; else emptyTask">
                     <section class="task-section" *ngFor="let items of taskData; let lastItem = last;">
                         <mat-checkbox class="example-margin" (click)="taskSelected(items)">
