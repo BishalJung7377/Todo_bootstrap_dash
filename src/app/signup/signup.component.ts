@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
   title = 'TODO APP';
   name!: string;
   email!: string;
-  signupAuthResp: any;
+  signupAuthResp!: string;
   submitted = false;
   constructor(
     private formBuilder: FormBuilder,

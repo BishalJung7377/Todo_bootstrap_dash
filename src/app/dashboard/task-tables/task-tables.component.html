@@ -7,7 +7,7 @@
                 <!-- todays task  -->
                 <span class="display-2--overviewtext">
                   Today's Task
-                  <a class="nav-button" type="button">{{ taskCounter }}</a>
+                  <a class="counter-button text-center" type="button">{{ taskCounter }}</a>
               </span>
                 <div class="table__data p-4 mb-2 border border-2 rounded text-start" *ngIf="taskData.length >0; else emptyTask">
                     <section class="task-section" *ngFor="let items of taskData; let lastItem = last;">
@@ -62,15 +62,19 @@
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
                                             aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
                                           {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
-                                          <a class="nav-button" type="button">{{ lengthOflist[i] }}</a>
-
+                                          <!-- <a class="counter-button text-center" type="button">{{ lengthOflist[i] }}</a> -->
+                                          <a class="counter-button">
+                                            <span class="wrapp">{{ lengthOflist[i] }}</span>
+                                          </a>
                                       </button>
                                     </h2>
                                     <ng-template #emptyDataLegth>
                                         <button class="accordion-button collapsed border-bottom-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" data-toggle="collapse" [attr.data-target]="'#collapseItem' + i"
                                             aria-expanded="false" [attr.aria-controls]="'collapseItem' + i">
                                               {{ itemList.ListName }} &nbsp; &nbsp; &nbsp;
-                                              <a class="nav-button" type="button">0</a>
+                                              <a class="counter-button">
+                                                <span class="wrapp">{{ lengthOflist[i] }}</span>
+                                              </a>
                                           </button>
                                     </ng-template>
                                 </div>

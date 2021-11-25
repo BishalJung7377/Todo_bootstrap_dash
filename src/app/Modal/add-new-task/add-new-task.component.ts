@@ -63,7 +63,6 @@ export class AddNewTaskComponent implements OnInit {
           this.router
             .navigateByUrl('', { skipLocationChange: true })
             .then(() => {
-              
               this.toastr.success('Task Added Successfully', 'Task Added', {});
               this.router.navigate([decodeURI(this.location.path())]);
             });
@@ -72,15 +71,13 @@ export class AddNewTaskComponent implements OnInit {
       this.toastr.success('Error while adding data', 'Error', {});
     }
   }
-  getLists() {
-    if(this.loaderService.isLoading ){
+  getLists():void {
+    if (this.loaderService.isLoading) {
       this.listaDataname.displayList().subscribe((response: any) => {
         this.listData = response;
       });
+    } else {
     }
-    else{
-    }
-  
   }
   taskSubmit(): void {
     // if (this.addnewTaskform.valid) {

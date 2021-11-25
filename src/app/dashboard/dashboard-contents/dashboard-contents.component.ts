@@ -7,8 +7,6 @@ import { LoaderService } from 'src/app/services/loader/loader.service';
   styleUrls: ['./dashboard-contents.component.scss'],
 })
 export class DashboardContentsComponent implements OnInit {
-  constructor(
-    public loaderService: LoaderService
-  ) {}
+  constructor(public loaderService: LoaderService) {}
   ngOnInit(): void {}
 }

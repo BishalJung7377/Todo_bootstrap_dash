@@ -1,195 +1,203 @@
-@import "../custom";
-@import "../components/mixins";
-@import "../components/variables";
-
-.btn-round {
-  padding: 0.2375rem 0.2375rem 0.2375rem 0.2375rem;
-  position: relative;
-  font-weight: 100;
-  border: 1px solid white;
-  color: $black;
-  font-size: 1.1rem;
-  color: $primary;
-  background-color: #ff726f;
-}
-.nav-button{
-  padding: 0.2375rem 0.4375rem 0.2375rem 0.4375rem;
-  position: relative;
-  font-weight: 100;
-  border: 1px solid white;
-  margin-top: 0.01em;
-  border-radius: 100%;
-  color: black;
-  font-size: 1.1rem;
-  color: $primary;
-  background-color: #EB5757;
-}
-.tasknumbers{
-  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-  position: relative;
-  font-weight: 400;
-  border: 1px solid white;
-  color: $black;
-  font-size: 1.1rem;
-  color: $primary;
-  background-color: #BE263B;
-}
-.listumbers{
-  position: relative;
-  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
-  font-weight: 400;
-  border: 1px solid white;
-  color: $black;
-  font-size: 0.7rem;
-  color: $primary;
-  background-color: #EB5757;
-
-}
-.btn-rounded {
-  position: relative;
-  padding: 0.6rem 4.07rem 0.6375rem 2rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-  border: 1px solid white;
-  background: transparent;
-  span {
-    position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0em 0;
-    padding: 0;
-    top: 50%;
-    right: 6.6em;
-    transform: translateY(-50%);
-
-    i {
-      color: $black;
-      font-size: 1.3rem;
-      line-height: 2.5rem;
-      padding: 0em 0em 0em 0.7em;
+    @import "../custom";
+    @import "../components/mixins";
+    @import "../components/variables";
+    .btn-round {
+        padding: 0.2375rem 0.2375rem 0.2375rem 0.2375rem;
+        position: relative;
+        font-weight: 100;
+        border: 1px solid white;
+        color: $black;
+        font-size: 1.1rem;
+        color: $primary;
+        background-color: #ff726f;
     }
-  }
-}
-
-.btn-newtask {
-  position: relative;
-  padding: 1rem 2rem 1rem 2rem;
-  border: 1px solid white;
-  border-radius: 5%;
-  background-color: #BE263B;
-  color: white;
-  margin: 1.5em 0;
-
-  span {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-    text-align: center;
-    background: transparent;
-  }
-}
-.newtaskbtn {
-  @include media-breakpoint-down(sm) {
+    
+    .nav-button {
+        border: 1px solid white;
+        background: #EB5757;
+        text-align: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        display: inline-block;
+        font-size: 1.1rem;
+        vertical-align: middle;
+        color: black;
+        text-decoration: none
+    }
+    
+    .counter-button {
+        background: #EB5757;
+        text-align: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        display: inline-block;
+        font-size: 1.1rem;
+        vertical-align: middle;
+        color: black;
+        text-decoration: none
+    }
+    
+    .wrapp {
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .tasknumbers {
+        padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+        position: relative;
+        font-weight: 400;
+        border: 1px solid white;
+        color: $black;
+        font-size: 1.1rem;
+        color: $primary;
+        background-color: #BE263B;
+    }
+    
+    .listumbers {
+        position: relative;
+        padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+        font-weight: 400;
+        border: 1px solid white;
+        color: $black;
+        font-size: 0.7rem;
+        color: $primary;
+        background-color: #EB5757;
+    }
+    
+    .btn-rounded {
+        position: relative;
+        padding: 0.6rem 4.07rem 0.6375rem 2rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        border: 1px solid white;
+        background: transparent;
+        span {
+            position: absolute;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0em 0;
+            padding: 0;
+            top: 50%;
+            right: 6.6em;
+            transform: translateY(-50%);
+            i {
+                color: $black;
+                font-size: 1.3rem;
+                line-height: 2.5rem;
+                padding: 0em 0em 0em 0.7em;
+            }
+        }
+    }
+    
+    .btn-newtask {
+        position: relative;
+        padding: 1rem 2rem 1rem 2rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #BE263B;
+        color: white;
+        margin: 1.5em 0;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
     .newtaskbtn {
-      display: none;
+        @include media-breakpoint-down(sm) {
+            .newtaskbtn {
+                display: none;
+            }
+        }
     }
-  }
-}
-.btn-newlist{
-  position: relative;
-  padding: 1rem 2rem 1rem 2rem;
-  border: 3px solid #BE263B;
-  background-color: white;
-  border-radius:  5%;
-  color: #BE263B;
-  padding: 15px 5px;
-  padding: 1rem 2rem 1rem 2rem;
-  margin: -1em 0em 0.5em 0em;
-
-  span {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-    text-align: center;
-    background: transparent;
-  }
-}
-
-.priority{
-  position: relative;
-  padding: 0.25rem 1rem 0.25rem 1rem;
-  border: 1px solid white;
-  border-radius: 5%;
-  background-color: #EB57570D;
-  color: #EB5757;
-  margin:0em 0em 0em 0em;
-
-
-  span{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: center;
-    background: transparent;
-  }
-
-}  
-
-.accordion-button:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #FEB7EE;
-}
-
-.newtaskbtn{
-  position: relative;
-  font-weight: 700;
-  border: 1px solid white;
-  background-color: white;
-}
-.accordion-header .accordion-button {
-  background-color: transparent !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @include media-breakpoint-down(sm){
-//   .priority{
-//     color: white;
-//     margin:0em 0em 0em 0em;
-//   }
-//   span{
-//     font-size: 2rem;
-//   }    
-// }
-// @include media-breakpoint-down(md){
-//   .priority{
-//     color: white;
-//     margin:0em 0em 0em 0em;
-//   }    
-//   span{
-//     font-weight: 500;
-//     font-size: 0rem;
-//     text-align: center;
-//   }
-// }
-// @include media-breakpoint-down(xl){
-//   .priority{
-//     color: white;
-//     margin:0em 0em 0em 0em;
-//   }    
-//   span{
-//     font-size: 1rem;
-//     text-align: center;
-//   }
-// }
+    
+    .btn-newlist {
+        position: relative;
+        padding: 1rem 2rem 1rem 2rem;
+        border: 3px solid #BE263B;
+        background-color: white;
+        border-radius: 5%;
+        color: #BE263B;
+        padding: 15px 5px;
+        padding: 1rem 2rem 1rem 2rem;
+        margin: -1em 0em 0.5em 0em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
+    .priority {
+        position: relative;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #EB57570D;
+        color: #EB5757;
+        margin: 0em 0em 0em 0em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
+    .accordion-button:not(.collapsed) {
+        color: #0c63e4;
+        background-color: #FEB7EE;
+    }
+    
+    .newtaskbtn {
+        position: relative;
+        font-weight: 700;
+        border: 1px solid white;
+        background-color: white;
+    }
+    
+    .accordion-header .accordion-button {
+        background-color: transparent !important;
+    }
+    
+    // @include media-breakpoint-down(sm){
+    //   .priority{
+    //     color: white;
+    //     margin:0em 0em 0em 0em;
+    //   }
+    //   span{
+    //     font-size: 2rem;
+    //   }    
+    // }
+    // @include media-breakpoint-down(md){
+    //   .priority{
+    //     color: white;
+    //     margin:0em 0em 0em 0em;
+    //   }    
+    //   span{
+    //     font-weight: 500;
+    //     font-size: 0rem;
+    //     text-align: center;
+    //   }
+    // }
+    // @include media-breakpoint-down(xl){
+    //   .priority{
+    //     color: white;
+    //     margin:0em 0em 0em 0em;
+    //   }    
+    //   span{
+    //     font-size: 1rem;
+    //     text-align: center;
+    //   }
+    // }

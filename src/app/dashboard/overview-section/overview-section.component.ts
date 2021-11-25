@@ -21,7 +21,7 @@ export class OverviewSectionComponent implements OnInit {
     this.getapiData();
   }
 
-  getapiData() {
+  getapiData(): void {
     this.showTaskauth.showTask().subscribe((response: any) => {
       this.taskData = response;
       this.taskCounter = this.taskData.length;

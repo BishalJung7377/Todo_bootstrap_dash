@@ -11,23 +11,15 @@ export class APIServiceService {
   public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
-
-  private API_URL = 'https://6153eda62473940017efaae5.mockapi.io/api/todo/signup';
-
+  private API_URL =
+    'https://6153eda62473940017efaae5.mockapi.io/api/todo/signup';
 
   constructor(private http: HttpClient) {}
-  // User login service
-  userLogin(email: string, password: string): Observable<any> {
-    return this.http.post(`https://reqres.in/api/login`, {
-      email: email,
-      password: password,
-    });
-  }
   // For auth gaurd
   loggedIn() {
     return !!localStorage.getItem('token');
   }
-  login():Observable<Users[]>{
+  login(): Observable<Users[]> {
     return this.http.get<Users[]>(this.API_URL);
   }
 }

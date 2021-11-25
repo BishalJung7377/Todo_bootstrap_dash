@@ -1,9 +1,8 @@
 <section class="addtaskmodal">
     <div class="loader-container" *ngIf="loaderService.isLoading | async">
-        <mat-spinner style="top:50%; left:50%" color="accent" diameter="50" mode="indeterminate" value="100"></mat-spinner>
+        <mat-spinner style="top: 50%; left: 50%" color="accent" diameter="50" mode="indeterminate" value="100"></mat-spinner>
     </div>
     <div class="container">
-
         <div class="modal-header">
             <h2 class="modal-title" id="modal-title">New Task</h2>
             <button type="button" class="close" aria-describedby="modal-title" (click)="modalRef.close('Cross click')">

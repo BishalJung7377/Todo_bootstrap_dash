@@ -80,14 +80,16 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  routeDashboard() {
+  routeDashboard():void {
     this.router.navigate(['/dashboard']);
     this.toastr.success('Logged is Successfull', 'Logged In', {});
-
   }
-  throwErrorMessage() {
-    this.toastr.warning('Unable to log in, Please Check Credentials', 'Error Login', {});
-
+  throwErrorMessage():void {
+    this.toastr.warning(
+      'Unable to log in, Please Check Credentials',
+      'Error Login',
+      {}
+    );
   }
 
   get loginFormcontroller() {

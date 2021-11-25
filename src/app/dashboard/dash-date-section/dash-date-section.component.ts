@@ -17,18 +17,13 @@ export class DashDateSectionComponent implements OnInit {
     year: 'numeric',
     day: 'numeric',
   });
-  taskData: any = [];
   modalRef!: MdbModalRef<AddNewTaskComponent>;
   constructor(
     private modal: NgbModal,
     private modalService: MdbModalService,
     private showTaskAUth: TaskService
   ) {}
-  ngOnInit(): void {
-    this.showTaskAUth.showTask().subscribe((response: any) => {
-      this.taskData = response;
-    });
-  }
+  ngOnInit(): void {}
   // open modal function
   openModal(): void {
     this.modalRef = this.modalService.open(AddNewTaskComponent, {

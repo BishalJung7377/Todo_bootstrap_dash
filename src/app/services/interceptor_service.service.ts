@@ -14,8 +14,10 @@ import { LoaderService } from './loader/loader.service';
   providedIn: 'root',
 })
 export class InterceptorServiceService implements HttpInterceptor {
-  constructor(public loaderService: APIServiceService,
-    public itemLoaderService: LoaderService) {}
+  constructor(
+    public loaderService: APIServiceService,
+    public itemLoaderService: LoaderService
+  ) {}
   intercept(
     req: HttpRequest<string>,
     next: HttpHandler

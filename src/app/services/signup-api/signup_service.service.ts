@@ -11,7 +11,6 @@ import { Users } from '../user';
 export class SignupserviceService {
   userData: any;
   constructor(private http: HttpClient) {}
-
   userSignUp(data: Users) {
     return this.http
       .post<Users>(
