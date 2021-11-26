@@ -14,7 +14,7 @@
     
     .nav-button {
         border: 1px solid white;
-        background: #EB5757;
+        background: rgba(251, 220, 211, 0.25);
         text-align: center;
         width: 34px;
         height: 34px;
@@ -22,12 +22,12 @@
         display: inline-block;
         font-size: 1.1rem;
         vertical-align: middle;
-        color: black;
+        color: #BE263B;
         text-decoration: none
     }
     
     .counter-button {
-        background: #EB5757;
+        background: #FBDCD340;
         text-align: center;
         width: 24px;
         height: 24px;
@@ -35,7 +35,7 @@
         display: inline-block;
         font-size: 1.1rem;
         vertical-align: middle;
-        color: black;
+        color: #EB5757;
         text-decoration: none
     }
     
@@ -44,6 +44,7 @@
         position: relative;
         top: 50%;
         left: 50%;
+        color: #EB5757;
         transform: translate(-50%, -50%);
     }
     
@@ -55,7 +56,7 @@
         color: $black;
         font-size: 1.1rem;
         color: $primary;
-        background-color: #BE263B;
+        background-color: #FBDCD340;
     }
     
     .listumbers {
@@ -66,7 +67,7 @@
         color: $black;
         font-size: 0.7rem;
         color: $primary;
-        background-color: #EB5757;
+        background-color: #FBDCD340;
     }
     
     .btn-rounded {
@@ -145,7 +146,7 @@
         border-radius: 5%;
         background-color: #EB57570D;
         color: #EB5757;
-        margin: 0em 0em 0em 6em;
+        margin: 0em 0em 0em 9em;
         span {
             font-family: "Poppins", sans-serif;
             font-weight: 500;
