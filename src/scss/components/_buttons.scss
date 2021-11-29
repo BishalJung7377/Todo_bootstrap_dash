@@ -95,6 +95,74 @@
         }
     }
     
+    .High {
+        position: relative;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #EB57570D;
+        color: #EB5757;
+        margin: 0em 0em 0em 9em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
+    .Medium {
+        position: relative;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #2196530D;
+        color: #219653;
+        margin: 0em 0em 0em 9em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
+    .Low {
+        position: relative;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #F2994A0D;
+        color: #f2994a;
+        margin: 0em 0em 0em 9em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
+    .priority {
+        position: relative;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border: 1px solid white;
+        border-radius: 5%;
+        background-color: #EB57570D;
+        color: #EB5757;
+        margin: 0em 0em 0em 9em;
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            background: transparent;
+        }
+    }
+    
     .btn-newtask {
         position: relative;
         padding: 1rem 2rem 1rem 2rem;

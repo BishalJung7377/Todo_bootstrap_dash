@@ -19,53 +19,50 @@
                                     <span class="display-2--tasktext">{{ items.TaskName }}</span>
 
                                 </div>
-                                <div class="col-md-8 ">
-                                    <button type="button" class="priority">
-                                        <span
-                                            [ngClass]="{
-                                               high: items.Priority === 'High', medium: items.Priority === 'Medium', low: items.Priority === 'Low'}">
-                                            {{ items.Priority }}
+                                <div class="col-md-8 text-end ">
+                                    <button class="{{ items.Priority}}">
+                                        <span>
+                                            {{ items.Priority  }}
                                         </span>
-                                    </button>
+                                        </button>
                                 </div>
 
                             </div>
-
                         </mat-checkbox>
                         <br />
-                        <span class="display-2--tasksubtitletext fw-light text-center">{{ items.ListName }}</span>
-                        <mat-divider class="mt-4" *ngIf="!lastItem; else noDivider"></mat-divider>
+                        <span class="display-2--tasksubtitletext fw-light text-center ">{{ items.ListName }}</span>
+                        <mat-divider class="mt-4 " *ngIf="!lastItem; else noDivider "></mat-divider>
                     </section>
                 </div>
                 <ng-template #emptyTask>
-                    <div class="table__data p-4 mb-2 border border-2 rounded text-start">
+                    <div class="table__data p-4 mb-2 border border-2 rounded text-start ">
                         <p>Empty Task Items</p>
                     </div>
                 </ng-template>
                 <ng-template #noDivider>
-                    <mat-divider class="mt-4 d-none"></mat-divider>
+                    <mat-divider class="mt-4 d-none "></mat-divider>
                 </ng-template>
             </div>
             <!-- listname  -->
-            <div class="col-lg-1 col-md-2"></div>
-            <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 list-tables rounded p-2 m-auto">
-                <div class="row mr-2">
-                    <div class="col-md-6">
-                        <span class="display--2">
-                          <span class="display-2--overviewtext">List Name </span>
+            <div class="col-lg-1 col-md-2 "></div>
+            <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12 list-tables rounded p-2 m-auto ">
+                <div class="row mr-2 ">
+                    <div class="col-md-6 ">
+                        <span class="display--2 ">
+                          <span class="display-2--overviewtext ">List Name </span>
                         </span>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <div class="newlistbtn">
-                            <button type="button" class="btn-newlist" (click)="openModal()">
+                    <div class="col-md-6 text-end ">
+                        <div class="newlistbtn ">
+                            <button type="button " class="btn-newlist " (click)="openModal() ">
                               <span> Create new list </span>
                           </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="table__data p-4 mb-2 border border-2 rounded p-2 mb-2 text-start">
-                    <section class="list-section" *ngIf="listData.length >0; else emptyListData ">
+                <div class="table__data p-4 mb-2 border border-2 rounded p-2 mb-2 text-start ">
+                    <section class="list-section " *ngIf="listData.length>0; else emptyListData ">
                         <div id="accordion" class="accordion accordion-flush">
                             <div class="accordion-item" *ngFor="let itemList of listData;let i = index">
                                 <div class="accordion-header" [attr.id]="'heading' + i">
